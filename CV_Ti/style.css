@@ -17,7 +17,9 @@ body {
 a {
   text-decoration: none;
   color:#FFD700;
+  
 }
+
 
 
 .home_section {
@@ -31,24 +33,41 @@ a {
 }
 
 nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav_contact_link {
-    height: 5vh;
-    padding: 0.75ch 1.5vw;
-    border: 1px solid white;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3 ease;
+.header_title {
+  font-family: "Anton", sans-serif;
+  font-size: 3vw;
 }
 
-.nav_contact_link:hover {
-    background-color: white;
-    color: black;
+.nav_links {
+  display: flex;
+  gap: 2vw;
 }
+
+.nav_links span {
+  padding: 0.75ch 1.5vw;
+  border: 1px solid white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav_links span:hover {
+  background-color: black;
+  color: black;
+}
+
+.nav_links span a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+
 
 .sub_hero_text {
     display: flex;
@@ -56,6 +75,7 @@ nav {
     font-size: 1vw;
     font-weight: 400;
 }
+
 
 .sub_hero_text p {
     width: 35vw;
@@ -68,6 +88,7 @@ nav {
     line-height: 1;
     text-transform: uppercase;
 }
+
 
 .scroll_btn {
     position: absolute;
@@ -132,6 +153,9 @@ nav {
     gap: 3vw;
     overflow: hidden;
 }
+.skills :hover{
+    color: #04e680;
+}
 
 .projects_section{
     font-family: "Anton", sans-serif;
@@ -192,26 +216,45 @@ nav {
 .contact_section span{
     position: absolute;
     cursor: pointer;
+    display: inline-block; /* Đảm bảo transform hoạt động ổn định */
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+    transform-origin: center center; /* Phóng to từ chính giữa */
 }
 
 .contact_section span:nth-child(1){
     top: 20%;
     left: 15%;
+    transform: translate(50%, -50%);
+    border: 1px solid white;
+    padding: 1vw 1.5vw;
+    border-radius: 20px;
 }
 
 .contact_section span:nth-child(2){
     top: 20%;
     right: 15%;
+    transform: translate(50%, -50%);
+    border: 1px solid white;
+    padding: 1vw 1.5vw;
+    border-radius: 20px;
 }
 
 .contact_section span:nth-child(3){
     top: 75%;
     left: 15%;
+    transform: translate(50%, -50%);
+    border: 1px solid white;
+    padding: 1vw 1.5vw;
+    border-radius: 20px;
 }
 
 .contact_section span:nth-child(4){
     top: 75%;
     right: 15%;
+    transform: translate(50%, -50%);
+    border: 1px solid white;
+    padding: 1vw 1.5vw;
+    border-radius: 20px;
 }
 
 .contact_section span:nth-child(5){
@@ -222,21 +265,49 @@ nav {
     padding: 1vw 1.5vw;
     border-radius: 20px;
 }
-
-.contact_section span:nth-child(5):hover{
-    background-color: white;
+.contact_section span:nth-child(1):hover{
+    background-color: rgb(16, 27, 230);
+    color: rgb(0, 0, 0);
+    transform: translate(50%, -50%) scale(1.25);
+    transition: width 0.5s ease-in-out 0.5s, background-color 0.5s linear;
+}
+.contact_section span:nth-child(2):hover{
+    background-color: rgb(230, 11, 189);
     color: black;
+    transform: translate(50%, -50%) scale(1.25);
+    transition: width 0.5s ease-in-out 0.5s, background-color 0.5s linear;
+}
+.contact_section span:nth-child(3):hover{
+    background-color: rgb(198, 135, 26);
+    color: black;
+    transform: translate(50%, -50%) scale(1.25);
+    transition: width 0.5s ease-in-out 0.5s, background-color 0.5s linear;
+}
+.contact_section span:nth-child(4):hover{
+    background-color: rgb(0, 0, 0);
+    color: black;
+    transform: translate(50%, -50%) scale(1.25);
+    transition: width 0.5s ease-in-out 0.5s, background-color 0.5s linear;
+}
+.contact_section span:nth-child(5):hover{
+    background-color: rgb(1, 152, 29);
+    color: black;
+    transform: translate(50%, -50%) scale(1.25);
+    transition: width 0.5s ease-in-out 0.5s, background-color 0.5s linear;
+    
+    
 }
 
 .footer{
     width: 100vw;
-    height: 40vh;
+    height: 30vh;
     padding: 0 10vw;
     display: grid;
     grid-template-columns: 10vw 10vw 5vw 5vw;
     gap: 12.5vw;
     align-items: center;
     font-size: 1vw;
+    background-color: rgb(16, 16, 188);
 }
 
 .footer_title{
@@ -258,6 +329,7 @@ nav {
 .footer div span:hover{
     text-decoration: underline;
 }
+
 #backToHome {
   position: fixed;
   bottom: 50px;
@@ -272,3 +344,59 @@ nav {
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
+.title_projects {
+    font-family: "Anton", sans-serif;
+    font-size: 3vw;
+    text-transform: uppercase;
+    margin-bottom: 2vh;
+}
+.title_projects:hover {
+    color: #04e680;
+   
+}
+
+.certificate_section {
+  padding: 20px;
+  background-color: rgb(3, 134, 134);
+  text-align: center;
+  justify-self:center;
+}
+
+.certificate_title {
+  font-size: 50px;
+  font-weight: bold;
+  color: #FFD700;
+  margin-bottom: 16px;  
+  text-align: center;
+  
+}
+
+.certificate_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.certificate_card {
+  border: 2px solid #007BFF;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+.certificate_card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.certificate_card:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+.pic_project:hover {
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}   
