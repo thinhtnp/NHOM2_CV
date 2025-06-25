@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Cá Nhân - Thịnh</title>
+    <link rel="stylesheet" href="thinh.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+        </div>
+    </div>
+
+    <!-- Trang giới thiệu -->
+    <div class="intro-page">
+        <div class="intro-content">
+            <h1 class="animate__animated animate__fadeInDown">WELCOME TO MY UNIVERSE</h1>
+            <div class="animated-title">
+                <div class="text-top">
+                    <div>
+                        <span>Trần Ngô Phúc Thịnh</span>
+                        <span>Creative Developer</span>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="animated">
+                <button id="enter-btn" class="enter-button">
+                    <span>EXPLORE MY WORLD</span>
+                    <div class="liquid"></div>
+                </button>
+            </div>
+        </div>
+        <canvas id="intro-canvas"></canvas>
+    </div>
+
+    <!-- Main CV Content -->
+    <div class="cv-container" style="display: none;">
+        <!-- Floating Navigation -->
+        <div class="floating-nav">
+            <div class="floating-nav-bg"></div>
+            <ul>
+                <li><a href="#home" data-title="Home"><i class="fas fa-home"></i></a></li>
+                <li><a href="#about" data-title="About"><i class="fas fa-user"></i></a></li>
+                <li><a href="#skills" data-title="Skills"><i class="fas fa-code"></i></a></li>
+                <li><a href="#projects" data-title="Projects"><i class="fas fa-project-diagram"></i></a></li>
+                <li><a href="#contact" data-title="Contact"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+        </div>
+
+        <!-- Phần Header với Banner và Navbar -->
+        <header id="home">
+            <div class="banner">
+                <div class="banner-content">
+                    <div class="glitch-wrapper">
+                        <div class="glitch" data-text="TRẦN NGÔ PHÚC THỊNH">TRẦN NGÔ PHÚC THỊNH</div>
+                    </div>
+                    <p class="typewriter">Fullstack Developer | UI/UX Enthusiast | Tech Explorer</p>
+                </div>
+                <div class="scroll-down">
+                    <div class="mouse">
+                        <div class="scroller"></div>
+                    </div>
+                    <p>Scroll Down</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Phần Thông tin cá nhân -->
+            <section id="about" class="section about-section">
+                <div class="container">
+                    <h2 class="section-title">Thông tin cá nhân</h2>
+                    <div class="about-content">
+                        <div class="about-image">
+                            <div class="avatar-wrapper">
+                                <img src="images/profile_Thinh.jpg" alt="Ảnh đại diện" class="avatar">
+                                <div class="avatar-border"></div>
+                            </div>
+                        </div>
+                        <div class="about-info">
+                            <div class="info-item">
+                                <h3><i class="fas fa-id-card"></i> Giới thiệu</h3>
+                                <p>Xin chào! Tôi là Thịnh, sinh viên năm 2 trường Đại học Giao thông vận tải TPHCM,ngành Công nghệ thông tin. Tôi đam mê công nghệ và luôn tìm tòi học hỏi những điều mới.</p>
+                            </div>
+                            
+                            <div class="info-item">
+                                <h3><i class="fas fa-birthday-cake"></i> Thông tin cơ bản</h3>
+                                <ul>
+                                    <li><strong>Ngày sinh:</strong> 18/06/2005</li>
+                                    <li><strong>Giới tính:</strong> Nam</li>
+                                    <li><strong>SĐT:</strong> 0354945018</li>
+                                    <li><strong>Email:</strong> tranngophucthinh@gmail.com</li>
+                                    <li><strong>Địa chỉ:</strong> TP.Hồ Chí Minh, Việt Nam</li>
+                                    <li><strong>Học vấn:</strong> Ho Chi Minh City University of Transport</li>
+                                    <li><strong>GPA:</strong> 3.66/4.0</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phần Mục tiêu nghề nghiệp -->
+            <section class="section career-section">
+                <div class="container">
+                    <h2 class="section-title">Mục tiêu nghề nghiệp</h2>
+                    <div class="career-content">
+                        <div class="career-goal">
+                            <div class="goal-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <p>Trong 2 năm tới, tôi mong muốn mình năng lực để làm việc part-time hoặc full-time vị trí Junior Fullstack Developer tại công ty công nghệ hoặc freelance..</p>
+                        </div>
+                        <div class="career-goal">
+                            <div class="goal-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <p>Tôi muốn phát triển chuyên sâu về các framework JavaScript như React và Node.js, đồng thời học hỏi thêm về kiến trúc hệ thống và DevOps.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phần Sở thích -->
+            <section class="section hobby-section">
+                <div class="container">
+                    <h2 class="section-title">Sở thích</h2>
+                    <div class="hobby-content">
+                        <div class="hobby-item">
+                            <div class="hobby-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <p>Lập trình</p>
+                        </div>
+                        <div class="hobby-item">
+                            <div class="hobby-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <p>Đọc sách</p>
+                        </div>
+                        <div class="hobby-item">
+                            <div class="hobby-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <p>Âm nhạc</p>
+                        </div>
+                        <div class="hobby-item">
+                            <div class="hobby-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <p>Nấu ăn</p>
+                        </div>
+                        <div class="hobby-item">
+                            <div class="hobby-icon">
+                                <i class="fas fa-plane"></i>
+                            </div>
+                            <p>Du lịch</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phần Kỹ năng và Ngôn ngữ -->
+            <section id="skills" class="section skills-section">
+                <div class="container">
+                    <h2 class="section-title">Kỹ năng & Ngôn ngữ</h2>
+                    <div class="skills-content">
+                        <div class="skills-column">
+                            <h3><i class="fas fa-code"></i> Kỹ năng lập trình</h3>
+                            <div class="skill-item">
+                                <p>HTML/CSS</p>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <p>JavaScript</p>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <p>Python</p>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <p>Java</p>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skills-column">
+                            <h3><i class="fas fa-language"></i> Ngôn ngữ</h3>
+                            <div class="skill-item">
+                                <p>Tiếng Việt</p>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <p>Tiếng Anh</p>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phần Chứng chỉ - Giải thưởng -->
+            <section class="section certificate-section">
+                <div class="container">
+                    <h2 class="section-title">Chứng chỉ</h2>
+                    <div class="certificate-content">
+                        <div class="certificate-item">
+                            <i class="fas fa-certificate"></i>
+                            <p>Hiện tại tôi chưa có chứng chỉ hoặc giải thưởng nào đáng kể.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phần Dự án -->
+            <section id="projects" class="section projects-section">
+                <div class="container">
+                    <h2 class="section-title">Dự án</h2>
+                    <div class="projects-content">
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img src="images/project1_Thinh.jpg" alt="Dự án 1">
+                                <div class="project-overlay">
+                                    <h3>Website bán kim cương</h3>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <p>Xây dựng website bán hàng kim cương</p>
+                                <p><strong>Công nghệ:</strong> Python3, Django, HTML/CSS/JS,...</p>
+                                <a href="https://github.com/hoThanhThien/NHOM_01 " target="_blank" class="project-link">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-image">
+                                <img src="images/project2_Thinh.jpg" alt="Dự án 2">
+                                <div class="project-overlay">
+                                    <h3>Website bán và thuê Bất động sản</h3>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <p>Xây dựng website buôn bán và cho thuê BĐS</p>
+                                <p><strong>Công nghệ:</strong> HTML/CSS/JS,...</p>
+                                <a href="https://github.com/thinhtnp/Nhom2_Web" target="_blank" class="project-link">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phần Liên hệ -->
+            <section id="contact" class="section contact-section">
+                <div class="container">
+                    <h2 class="section-title">Liên hệ</h2>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <p>tranngophucthinh@gmail.com</p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <p>0354945018</p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>TP.Hồ Chí Minh, Việt Nam</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/thinhtnp" target="_blank" class="social-icon github">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/1R9xAB6orj/" target="_blank" class="social-icon facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+    
+                            <a href="https://www.instagram.com/tnp_thinh?igsh=NnpvcmlobjdoM2pt" target="_blank" class="social-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 - CV Trần Ngô Phúc Thịnh. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#home">Trang chủ</a>
+                <a href="#about">Giới thiệu</a>
+                <a href="#contact">Liên hệ</a>
+            </div>
+        </footer>
+
+        <!-- Nút Back to Top -->
+        <button id="back-to-top" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+            <span class="back-to-top-tooltip">Lên đầu trang</span>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="thinh.js"></script>
+</body>
+</html>
