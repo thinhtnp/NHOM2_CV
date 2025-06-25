@@ -10,7 +10,10 @@
   
 </head>
 <body>
-  <button id="modeToggle">🌙</button>
+  <button id="modeToggle">
+    <span class="sun-icon">☀️</span>
+    <span class="moon-icon">🌙</span>
+  </button>
   <!-- ✨ INTRO – appears first -->
   <section id="intro" class="fullscreen stars">
     <h1 class="intro-title">
@@ -19,6 +22,17 @@
     <button id="exploreBtn" class="btn-explore">
         <span class="label">EXPLORE</span>
     </button>
+    
+    <div class="sparkles-container">
+        <div class="sparkle" style="left: 10%; animation-delay: 0.5s; animation-duration: 2.5s; width: 4px; height: 4px;"></div>
+        <div class="sparkle" style="left: 25%; animation-delay: 1.2s; animation-duration: 3.0s; width: 5px; height: 5px;"></div>
+        <div class="sparkle" style="left: 40%; animation-delay: 0.8s; animation-duration: 2.8s; width: 3px; height: 3px;"></div>
+        <div class="sparkle" style="left: 55%; animation-delay: 1.7s; animation-duration: 3.2s; width: 6px; height: 6px;"></div>
+        <div class="sparkle" style="left: 70%; animation-delay: 0.3s; animation-duration: 2.7s; width: 4.5px; height: 4.5px;"></div>
+        <div class="sparkle" style="left: 85%; animation-delay: 1.0s; animation-duration: 3.1s; width: 5.5px; height: 5.5px;"></div>
+        <div class="sparkle" style="left: 5%; animation-delay: 2.0s; animation-duration: 2.9s; width: 3.5px; height: 3.5px;"></div>
+        <div class="sparkle" style="left: 65%; animation-delay: 0.7s; animation-duration: 2.6s; width: 5px; height: 5px;"></div>
+    </div>
   </section>
 
 
@@ -45,33 +59,29 @@
     <!-- 📝 PERSONAL INFO -->
     <section id="about" class="section-glass">
       <h2 class="section-title">INTRODUCE</h2>
-      <div class="info-grid">
+      <div class="intro-content">
         <div class="info-card">
-          <p>Hi,I'm Nynn 👋
-          <p>I am a cute, beautiful, and individualistic Gen Z girl, 
-            passionate about creativity, designing beautiful, unique, and strange interfaces. 
-            I don't make monotonous websites, I make 'webs with soul', with 'my own style'. 
-            Passionate about language, technology, and art, I always want to turn ideas into experiences ✨</p> </p>
+          <p>Hi,I'm Nynn 👋</p>
+          <p>I am a cute, beautiful, and individualistic Gen Z girl,
+            passionate about creativity, designing beautiful, unique, and strange interfaces.
+            I don't make monotonous websites, I make 'webs with soul', with 'my own style'.
+            Passionate about language, technology, and art, I always want to turn ideas into experiences ✨</p>
         </div>
-
       </div>
 
-      <h2 class="section-title">ABOUT&nbsp;ME</h2>
-      <div class="info-grid">
+      <h2 class="section-title">ABOUT ME</h2>
+      <div class="about-me-grid"> <figure class="avatar">
+          <img src="images/avatar.jpg"  />
+        </figure>
         <div class="info-card info-table">
           <div class="row"><p><strong>Full name:</strong> Nguyen Ngoc Nhu Y</p><p><strong>Gender:</strong> Female</p></div>
-          <div class="row"><p><strong>Birth date:</strong> 15&nbsp;July&nbsp;2005</p><p><strong>Zodiac:</strong> Cancer</p></div>
+          <div class="row"><p><strong>Birth date:</strong> 15 July 2005</p><p><strong>Zodiac:</strong> Cancer</p></div>
           <div class="row"><p><strong>Phone:</strong> 0941957308</p><p><strong>Status:</strong> Single</p></div>
           <div class="row"><p><strong>Major:</strong> Information Technology</p><p><strong>University:</strong> Ho Chi Minh City University of Transport</p></div>
           <div class="row"><p><strong>Address:</strong> 407/3 Nguyen Xi, Binh Thanh Dist, HCMC</p><p><strong>Email:</strong> <a href="mailto:nguyenngocnhuy15705@gmail.com">nguyenngocnhuy15705@gmail.com</a></p></div>
         </div>
-
-        <figure class="avatar">
-          <img src="images/avatar.jpg" alt="My portrait" /> <!-- IMG HERE -->
-        </figure>
       </div>
     </section>
-
     <!-- 🎯 GOALS -->
     <section id="goals" class="section-gradient">
       <h2 class="section-title">GOALS</h2>
@@ -88,78 +98,39 @@
 
       <div class="card-wrap">
         <!-- Film -->
-        <div class="flip-card">
+        <div class="flip-card no-flip">
           <div class="flip-inner">
             <div class="flip-front">🎬 MOVIES</div>
-            <div class="flip-back">
-             Trò Chơi Trí Mệnh, Mouse, Go Go Squid!, Lâm Giang Tiên,...
-            </div>
           </div>
         </div>
         <!-- Novel -->
-        <div class="flip-card">
+        <div class="flip-card no-flip">
           <div class="flip-inner">
             <div class="flip-front">📚 NOVELS</div>
-            <div class="flip-back">
-              Kính Vạn Hoa Chết Chóc, Sát Phá Lang, Thương Tiến Tửu,...
-            </div>
           </div>
         </div>
-        <!-- Music -->
-        <div class="flip-card">
+        <!-- MUSIC -->
+        <div class="flip-card music" onclick="window.open('https://open.spotify.com/playlist/51dLoNriSZJPXaVJKtbNCs?si=7b5dbd7cb1674d58&pt=f0624899051502713ca46839e573a6a0', '_blank')">
           <div class="flip-inner">
             <div class="flip-front">🎵 MUSIC</div>
-            <div class="flip-back">
-              Ballad, C-Pop, V-pop,..
+            <div class="flip-back music">
+              <i class="fab fa-spotify fa-3x"></i>
+              <p>Click to listen!</p>
             </div>
           </div>
         </div>
-        <!-- Chess -->
-        <div class="flip-card">
+
+        <!-- CHESS -->
+        <div class="flip-card chess" onclick="window.open('https://www.chess.com/vi', '_blank')">
           <div class="flip-inner">
             <div class="flip-front">♟️ CHESS</div>
-            <div class="flip-back">
-              Play with me!!!??? ♟️
+            <div class="flip-back chess">
+              <p>Play with me!!!??? </p>
+              <i class="fas fa-chess fa-3x"></i>
             </div>
           </div>
-        </div>
-        <!-- Taekwondo -->
-        <div class="flip-card tkd">
-          <div class="flip-inner">
-            <div class="flip-front">🥋TAEKWONDO</div>
-            <div class="flip-back">
-              8-year journey - tap for trophies ↓
-              <div id="medalSlider" class="slider hidden">
-                <img src="images/bronze.jpg" alt="5 bronze medals" /> <!-- IMG HERE -->
-                <img src="images/silver.jpg" alt="4 silver medals" /> <!-- IMG HERE -->
-                <img src="images/gold.jpg"   alt="2 gold medals"   /> <!-- IMG HERE -->
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Travel -->
-        <div class="flip-card">
-          <div class="flip-inner">
-            <div class="flip-front">🌍 TRAVEL</div>
-            <div class="flip-back">
-              <div class="gallery">
-                <!-- 6 travel pics -->
-                <img src="images/travel1.jpg" alt="Travel 1" />
-                <img src="images/travel2.jpg" alt="Travel 2" />
-                <img src="images/travel3.jpg" alt="Travel 3" />
-                <img src="images/travel4.jpg" alt="Travel 4" />
-                <img src="images/travel5.jpg" alt="Travel 5" />
-                <img src="images/travel6.jpg" alt="Travel 6" />
-              </div> 
-            </div>
-          </div>
-        </div>
-      </div>
-
-      
-     
+        </div>   
+      </div> 
     </section>
 
     <!-- 🛠️ SKILLS & LANGUAGES -->
@@ -169,50 +140,64 @@
         <!-- Coding skills -->
         <div class="glass-box">
           <h3>&lt;/&gt;&nbsp;Coding</h3>
-          <div class="bar"><span style="--w:90%">HTML/CSS</span></div>
-          <div class="bar"><span style="--w:80%">JavaScript</span></div>
-          <div class="bar"><span style="--w:70%">Python</span></div>
-          <div class="bar"><span style="--w:60%">Java</span></div>
+          <div class="bar"><span style="--w:60%">HTML/CSS</span></div>
+          <div class="bar"><span style="--w:50%">JavaScript</span></div>
+          <div class="bar"><span style="--w:40%">Python</span></div>
+          <div class="bar"><span style="--w:40%">Java</span></div>
         </div>
         <!-- Languages -->
         <div class="glass-box">
           <h3>&#x1F4AC;&nbsp;Languages</h3>
-          <div class="bar"><span style="--w:100%">Vietnamese - native</span></div>
-          <div class="bar"><span style="--w:75%">English - advanced</span></div>
-          <div class="bar"><span style="--w:50%">Chinese - intermediate</span></div>
+          <div class="bar"><span style="--w:100%">Vietnamese </span></div>
+          <div class="bar"><span style="--w:60%">English </span></div>
+          <div class="bar"><span style="--w:40%">Chinese </span></div>
         </div>
       </div>
     </section>
 
-    <!-- 🎖️ CERTIFICATES -->
+    <!--  CERTIFICATES -->
     <section id="certificate" class="section-glow">
-      <h2 class="section-title">CERTIFICATES</h2>
+    <h2 class="section-title">CERTIFICATES & AWARDS</h2>
+
+    <div class="certificates-cards-wrapper">
       <div class="flip-card big">
         <div class="flip-inner">
           <div class="flip-front">TAEKWONDO</div>
           <div class="flip-back">
-            <img src="images/certificate.jpg"  />
+            <img src="images/certificate.jpg"  />
           </div>
         </div>
       </div>
+
+      <div class="flip-card no-flip tkd">
+        <div class="flip-inner">
+          <div class="flip-front">5🥉 | 4🥈 | 2🥇</div>
+        </div>
+      </div>
+    </div>
     </section>
 
+  <div id="tkdImagesModal">
+    <button class="close-button" onclick="closeTkdModal()">X</button>
+    <div class="modal-content">
+      </div>
+  </div>
     <!-- 🚀 PROJECTS -->
     <section id="projects" class="section-glow">
       <h2 class="section-title"> 🚀 PROJECTS </h2>
       <div class="project-wrap">
         <article class="project-card">
-          <h3>E-Commerce Website</h3>
+          <h3>Skincare Booking</h3>
           <p>Login, cart, checkout…</p>
-          <p><strong>Stack:</strong> Python Django&nbsp;/ HTML&nbsp;CSS&nbsp;JS</p>
-          <a href="#" class="link-arrow">Details →</a>
+          <p><strong>Stack:</strong> Java&nbsp;/ HTML&nbsp;CSS&nbsp;JS</p>
+          <a href="https://github.com/Justhathanh/Project_Java_SkinCareBooking" class="link-arrow">Details →</a>
         </article>
 
         <article class="project-card">
-          <h3>Real-Estate Listing Platform</h3>
-          <p>Rent &amp; sell properties.</p>
+          <h3>Web application for real estate rental and sale</h3>
+          <p>Rent &amp; real estate sale.</p>
           <p><strong>Stack:</strong> HTML&nbsp;CSS&nbsp;JS</p>
-          <a href="#" class="link-arrow">Details →</a>
+          <a href="https://github.com/thinhtnp/Nhom2_Web" class="link-arrow">Details →</a>
         </article>
       </div>
     </section>
@@ -252,7 +237,7 @@
     <!-- 🪄 FOOTER -->
     <footer class="footer">
       <p>
-        ✨ Made with 💖 by Nynn ✨
+        ✨ Made with 💖 by Nynn ✨<br>
        🪄 © 2025 Nguyen Ngoc Nhu Y. Thanks for visiting!
         
       </p>
