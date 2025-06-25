@@ -13,22 +13,21 @@ function scrollToTop() {
   });
 }
 </script>
-
+  
   </head>
   <body>
+    
+      <!-- HOME  -->
     <div class="home_section" id="home">
       <nav>
-        <span>LÂM VĂN TỊ</span>
-        
-        <Span>
-         
-          <span class="nav_about_link"><a href="#about">About</a></span>
-          
-          
-        </Span>
-        <span class="nav_projects_link"><a href="#projects">Projects</a></span>
-        <span class="nav_contact_link"><a href="#contact">Contact</a></span>
-      </nav>
+  <span class="header_title">LÂM VĂN TỊ</span>
+  <div class="nav_links">
+    <span class="nav_about_link"><a href="#about">About</a></span>
+    <span class="nav_about_link"><a href="#certificate">Certificate</a></span>
+    <span class="nav_projects_link"><a href="#projects">Projects</a></span>
+    <span class="nav_contact_link"><a href="#contact">Contact</a></span>
+  </div>
+</nav>
 
       <span class="sub_hero_text">
         <p>
@@ -46,8 +45,9 @@ function scrollToTop() {
       <span class="scroll_btn">(Scroll to Explore)</span>
     </div>
 
+      <!-- About -->
     <div class="about_section" id="about">
-      <img src="pic.jpg" />
+      <img src="avtbg.jpg" />
       <span class="about_span">Who am I?</span>
       <div class="about_content">
         <div class="about_topics">
@@ -60,6 +60,8 @@ Mình luôn tìm kiếm cơ hội để ứng dụng kỹ năng của mình vào
         </div>
       </div>
 
+      
+        <!-- skill  -->
       <div class="skills">
         <span>Java</span>
         <span>Spring Boot</span>
@@ -74,23 +76,44 @@ Mình luôn tìm kiếm cơ hội để ứng dụng kỹ năng của mình vào
       </div>
     </div>
 
+  
+        <!-- Certificate -->
+    <div class="certificate_section" id="certificate">
+      <span class="certificate_title">My Certificates</span>
+      <div class="certificate_container">
+        
+        <div class="certificate_card">
+  <div class="card_inner">
+    <div class="card_front">
+      <img src="certi.png" alt="Certificate Image" class="certificate_image">
+    </div>
+    <div class="card_back">
+      <p>Chưa có chứng chỉ nào</p>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+
+    
+      <!-- Project  -->
     <div class="projects_section" id="projects">
         <span class="project_title">My Projects</span>
         
         <div class="projects_container">
             <div class="project project1">
-                <span>01.Diamond
-                  Shop</span>
-                <img src="dia.png" />
+                <span><a href="https://github.com/hoThanhThien/NHOM_01" class="title_projects">01.Diamond
+                  Shop</a></span>
+                <img src="dia.png"class="pic_project" />
             </div>
             <div class="sub_container">
                 <div class="project project2">
-                    <span>02.E-com</span>
-                    <img src="ecom.png" />
+            <span><a href="https://github.com/thinhtnp/LTJAVA_TOPIC1" class="title_projects">02.E-com</a></span>
+                    <img src="ecom.png"class="pic_project" />
                 </div>
                 <div class="project project3">
-                    <span>03.Web Thuê BĐS</span>
-                    <img src="bds.png" />
+                    <span><a href="https://github.com/thinhtnp/Nhom2_Web" class="title_projects">03.Web Thuê BĐS</a></span>
+                    <img src="bds.png" class="pic_project"/>
                 </div>
                 
             </div>
@@ -98,7 +121,10 @@ Mình luôn tìm kiếm cơ hội để ứng dụng kỹ năng của mình vào
 
     </div>
 
+
+      <!-- Contact  -->
     <div class="contact_section" id="contact">
+          
         
         <span><a href="https://www.facebook.com/">Facebook</a></span>
         <span><a href="https://www.instagram.com/" target="_blank">Instagram</a></span>
@@ -109,14 +135,21 @@ Mình luôn tìm kiếm cơ hội để ứng dụng kỹ năng của mình vào
         <span><a href="https://mail.google.com/mail/?view=cm&fs=1&to=lamti3239@gmail.com&su=Xin chào&body=Rất vui được làm việc với bạn" target="_blank">Wanna work with me</a></span>
     </div>
 
+    
 
+      <!-- footer  -->
     <div class="footer">
         <span class="footer_title">
             Văn
             <br/>
             Tị
         </span>
-        <span class="footer_contact_link">Let's work together</span>
+        <span class="footer_contact_link">
+          <span >Let's work together</span>
+          <span> Phone: 0123654987</span>
+          <span> Email: lamti3239@gmail.com</span>
+        </span>
+        
         <div class="footer_nav">
             <span><a href="#home">Home</a></span>
             <span><a href="#about">About</a></span>
@@ -131,7 +164,12 @@ Mình luôn tìm kiếm cơ hội để ứng dụng kỹ năng của mình vào
 
         </span>
         <span><a href="https://github.com/LamVanTi">Github</a></span>
-        </div>
+        
+
+
+
+          <!-- button back to home  -->
+    </div>
         <button id="backToHome" onclick="scrollToTop()">⬆</button>
 
     </div>

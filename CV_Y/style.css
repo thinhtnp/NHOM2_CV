@@ -1,700 +1,322 @@
-/* RESET + BASE */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #1d1d2c, #3a1c71);
-  color: #fff;
-  transition: background 0.5s, color 0.5s;
-}
-a { color: #ff79c6; text-decoration: none; }
-button { cursor: pointer; }
-
-.fullscreen {
-  min-height: 100vh;
-  display: flex; flex-direction: column;
-  justify-content: center; align-items: center;
-  text-align: center;
-}
-.intro-title { font-size: 2.5rem; animation: fadeIn 2s ease-out; }
-.btn-explore {
-  margin-top: 20px; padding: 10px 30px;
-  background: #ff79c6; border: none; border-radius: 50px;
-  color: #fff; font-weight: bold; font-size: 1rem;
-  transition: transform 0.3s;
-}
-.btn-explore:hover { transform: scale(1.1); }
-
-.section-title {
-  font-size: 2.5rem;
-  text-align: center;
-  margin: 40px 0 20px;
-  font-weight: 700;
-  background: linear-gradient(90deg, #ff79c6, #bd93f9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: #ff79c6;
-  margin: 10px auto 0;
-  border-radius: 2px;
-  box-shadow: 0 0 10px #ff79c6;
-}
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-  .section-title::after {
-    width: 40px;
-  }
-}
-
-
-.section-glass {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  margin: 20px;
-}
-.section-gradient {
-  background: linear-gradient(135deg, #ff79c6, #bd93f9);
-  padding: 20px;
-  border-radius: 20px;
-}
-.section-light {
-  background: #fff;
-  color: #000;
-  padding: 20px;
-  border-radius: 20px;
-}
-.section-dark {
-  background: #000;
-  color: #fff;
-  padding: 20px;
-  border-radius: 20px;
-}
-
-.info-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-.info-card, .glass-box { padding: 15px; border: 1px solid #fff2; border-radius: 15px; }
-
-.avatar img { width: 200px; border-radius: 50%; border: 4px solid #ff79c6; }
-
-.flip-card {
-  background: transparent; width: 150px; height: 150px; perspective: 1000px;
-}
-.flip-inner {
-  position: relative; width: 100%; height: 100%;
-  transition: transform 0.8s; transform-style: preserve-3d;
-}
-.flip-card:hover .flip-inner { transform: rotateY(180deg); }
-.flip-front, .flip-back {
-  position: absolute; width: 100%; height: 100%;
-  display: flex; justify-content: center; align-items: center;
-  backface-visibility: hidden; border-radius: 15px; padding: 10px;
-}
-.flip-front { background: #ff79c6; color: #fff; }
-.flip-back { background: #bd93f9; color: #fff; transform: rotateY(180deg); }
-
-.bar {
-  background: #444; border-radius: 10px; margin: 5px 0;
-}
-.bar span {
-  display: inline-block;
-  background: #ff79c6;
-  padding: 3px 10px;
-  border-radius: 10px;
-  width: var(--w);
-}
-
-.project-card {
-  background: #222; padding: 15px; border-radius: 15px; margin: 10px;
-  transition: transform 0.3s, background 0.3s;
-}
-.project-card:hover {
-  transform: translateY(-5px); background: #333;
-}
-
-.social-icons a {
-  font-size: 1.5rem; margin: 0 10px;
-  color: #ff79c6; transition: color 0.3s;
-}
-.social-icons a:hover { color: #bd93f9; }
-
-#topBtn {
-  position: fixed; bottom: 30px; right: 30px;
-  background: #ff79c6; border: none; border-radius: 50%;
-  padding: 10px; font-size: 1.5rem;
-  display: none;
-}
-.bubbles .bubble, .sparkles .sparkle {
-  position: absolute; bottom: -50px; border-radius: 50%;
-  background: #ff79c6; opacity: 0.5;
-  animation: bubbleAnim 10s linear infinite;
-}
-@keyframes bubbleAnim {
-  0% { bottom: -50px; opacity: 0.5; }
-  100% { bottom: 100%; opacity: 0; }
-}
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-/* =======================
-   NÂNG CẤP GOALS
-======================= */
-.pill-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  list-style: none;
-  padding: 0;
-}
-.pill-list li {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid #ff79c6;
-  border-radius: 20px;
-  padding: 10px 20px;
-  font-weight: 500;
-  transition: background 0.3s, transform 0.3s;
-}
-.pill-list li:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-3px);
-}
-
-/* =======================
-   NÂNG CẤP HOBBIES
-======================= */
-.card-wrap {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  margin: 0 auto;
-  max-width: 900px;
-}
-.flip-card {
-  width: 100%;
-  max-width: 200px;
-  height: 200px;
-}
-
-/* =======================
-   NÂNG CẤP CONTACT
-======================= */
-#contact {
-  padding: 40px 20px;
-}
-.social-icons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 15px;
-}
-.social-icons a {
-  font-size: 2rem;
-  color: #ff79c6;
-  transition: transform 0.3s, color 0.3s;
-}
-.social-icons a:hover {
-  transform: scale(1.2);
-  color: #bd93f9;
-}
-#contact p {
-  text-align: center;
-  margin: 5px 0;
-  font-size: 1rem;
-}
-
-/* =======================
-   NÂNG CẤP FOOTER
-======================= */
-.footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 30px;
-  font-size: 0.9rem;
-  border-top: 1px solid #ff79c6;
-}
-.footer p {
-  margin: 0;
-}
-
-/* =======================
-   RESPONSIVE NÂNG CAO
-======================= */
-@media (max-width: 768px) {
-  .pill-list li {
-    font-size: 0.9rem;
-    padding: 8px 16px;
-  }
-  .flip-card {
-    max-width: 150px;
-    height: 150px;
-  }
-  .social-icons a {
-    font-size: 1.5rem;
-  }
-}
-#banner {
-  background: linear-gradient(135deg, rgba(255,121,198,0.2), rgba(189,147,249,0.2));
-  backdrop-filter: blur(10px);
-  padding: 40px 20px;
-  border-radius: 15px;
-  text-align:left;
-  margin: 20px;
-}
-
-.glow-text {
-  font-size: 1.8rem;
-  color: #fff;
-  text-shadow: 0 0 10px #ff79c6, 0 0 20px #bd93f9;
-  line-height: 1.5;
-}
-#intro, #banner {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 1s forwards;
-}
-#intro { animation-delay: 0.2s; }
-#banner { animation-delay: 0.8s; }
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-#topBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #ff79c6;
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  font-size: 1.5rem;
-  color: #fff;
-  box-shadow: 0 0 10px #ff79c6;
-  transition: opacity 0.3s, transform 0.3s;
-  opacity: 0;
-  pointer-events: none;
-}
-#topBtn.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-#topBtn:hover {
-  transform: scale(1.2);
-}
-.card-wrap {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  justify-items: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.flip-card {
-  width: 100%;
-  max-width: 180px;
-  height: 180px;
-}
-@media(max-width: 768px){
-  .card-wrap {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media(max-width: 480px){
-  .card-wrap {
-    grid-template-columns: 1fr;
-  }
-}
-.bubble, .sparkle {
-  position: absolute;
-  bottom: -50px;
-  border-radius: 50%;
-  background: #ff79c6;
-  opacity: 1;
-  animation: floatUp 10s linear infinite;
-}
-
-.bubble {
-  width: 10px;
-  height: 10px;
-}
-.sparkle {
-  width: 6px;
-  height: 6px;
-  background: #bd93f9;
-  box-shadow: 0 0 8px #bd93f9;
-}
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh) scale(1.5);
-    opacity: 1;
-  }
-}
-.bubble, .sparkle {
-  animation: floatUp 10s linear infinite alternate;
-}
-/* =======================
-   TONE MÀU TOÀN SITE
-======================= */
+/* ===========================
+   ROOT VARIABLES
+=========================== */
 :root {
-  --bg-color: #1a1b2f;
-  --bg-alt: #161616;
-  --text-color: #f8f8f2;
-  --accent1: #ff79c6;
-  --accent2: #8be9fd;
-  --accent3: #50fa7b;
-}
-
-/* BODY + LINK */
-body {
-  background: var(--bg-color);
-  color: var(--text-color);
-  transition: background 0.3s, color 0.3s;
-}
-
-a {
-  color: var(--accent1);
-  transition: color 0.3s;
-}
-a:hover {
-  color: var(--accent2);
-}
-
-/* SECTION TITLE */
-.section-title {
-  font-size: 2.5rem;
-  text-align: center;
-  margin: 40px 0 20px;
-  font-weight: 700;
-  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-}
-.section-title::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: var(--accent1);
-  margin: 10px auto 0;
-  border-radius: 2px;
-  box-shadow: 0 0 10px var(--accent1);
-}
-
-/* BUTTON EXPLORE */
-.btn-explore {
-  background: var(--accent1);
-  color: #fff;
-  padding: 12px 36px;
-  border: none;
-  border-radius: 50px;
-  font-size: 1.2rem;
-  box-shadow: 0 0 10px var(--accent1);
-  transition: all 0.3s ease;
-}
-.btn-explore:hover {
-  background: var(--accent2);
-  box-shadow: 0 0 20px var(--accent2);
-  transform: scale(1.1);
-}
-
-/* BANNER */
-#banner {
-  background: linear-gradient(135deg, rgba(255, 121, 198, 0.2), rgba(139, 233, 253, 0.2));
-  backdrop-filter: blur(10px);
-  padding: 40px 20px;
-  border-radius: 15px;
-  text-align: center;
-  margin: 20px;
-}
-.glow-text {
-  font-size: 1.8rem;
-  color: var(--text-color);
-  text-shadow: 0 0 10px var(--accent1), 0 0 20px var(--accent2);
-  line-height: 1.5;
-}
-
-/* BUBBLE & SPARKLE */
-.bubble, .sparkle {
-  position: absolute;
-  bottom: -50px;
-  border-radius: 50%;
-  animation: floatUp 10s linear infinite;
-}
-.bubble {
-  background: var(--accent2);
-  opacity: 0.8;
-  width: 10px;
-  height: 10px;
-}
-.sparkle {
-  background: var(--accent3);
-  box-shadow: 0 0 10px var(--accent3);
-  opacity: 0.8;
-  width: 6px;
-  height: 6px;
-}
-@keyframes floatUp {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh) scale(1.5);
-    opacity: 1;
-  }
-}
-
-/* PROJECT CARD */
-.project-card {
-  background: var(--bg-alt);
-  border: 1px solid var(--accent1);
-  padding: 15px;
-  border-radius: 10px;
-  transition: background 0.3s, border-color 0.3s;
-}
-.project-card:hover {
-  background: var(--bg-color);
-  border-color: var(--accent2);
-}
-.section-gradient {
-  background: linear-gradient(135deg, var(--accent1), var(--accent2));
-  color: var(--text-color);
-}
-
-.section-light {
-  background: rgba(255, 255, 255, 0.05);  /* hoặc 0.1 nếu muốn sáng hơn */
-  color: var(--text-color);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  padding: 20px;
-}
-
-.section-dark {
-  background: var(--bg-alt);
-  color: var(--text-color);
-}
-
-.section-glow {
-  background: linear-gradient(135deg, rgba(255,121,198,0.1), rgba(139,233,253,0.1));
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  padding: 20px;
-}
-/**/
-:root {
-  --bg-color: #0e0e0e;
+  --bg-color: #0e0e0e; /* Màu nền chính (rất tối) */
   --bg-alt: #1a1a1a;
-  --text-color: #f8f8f8;
-  --accent-blue: #00cfff;
-  --accent-green: #00ff94;
-  --accent-pink: #ff3cac;
+  --text-color: #f8f8f8; /* Màu chữ chính */
+  --accent-blue: #00cfff; /* Màu xanh dương neon */
+  --accent-green: #00ff94; /* Màu xanh lá neon */
+  --accent-pink: #ff3cac; /* Màu hồng neon */
 }
 
-/* Body + link */
+/* ===========================
+   BASE RESET + BODY + LINK
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background: var(--bg-color);
   color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
   transition: background 0.3s, color 0.3s;
 }
 
 a {
   color: var(--accent-blue);
+  text-decoration: none;
+  transition: color 0.3s;
 }
+
 a:hover {
   color: var(--accent-pink);
 }
 
-/* Section title */
+button {
+  cursor: pointer;
+}
+
+/* Ẩn phần profile ban đầu */
+#profile.hidden {
+  display: none;
+}
+/* ===========================
+   LIGHT MODE STYLES (ĐÃ CHỈNH SỬA LẠI THEO YÊU CẦU MỚI)
+=========================== */
+body.light-mode {
+  --bg-color: #f8f8f8; /* Nền sáng */
+  --bg-alt: #ffffff;
+  --text-color: #0e0e0e; /* Chữ tối */
+  --accent-blue: #007bff; /* Màu xanh dương accent cho Light Mode */
+  --accent-green: #28a745; /* Màu xanh lá accent cho Light Mode */
+  --accent-pink: #dc3545; /* Màu hồng accent cho Light Mode */
+}
+
+/* GIỮ NGUYÊN MÀU CỦA NÚT EXPLORE TRONG LIGHT MODE (SỬ DỤNG MÀU GỐC CỦA DARK MODE) */
+body.light-mode .btn-explore {
+  background: linear-gradient(45deg, #00cfff, #ff3cac); /* Dùng màu hex gốc của dark mode */
+  color: white; /* Đảm bảo chữ trắng */
+  box-shadow: 0 0 20px rgba(0, 207, 255, 0.6); /* Bóng đổ gốc của dark mode */
+}
+body.light-mode .btn-explore:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 207, 255, 0.8), 0 0 40px rgba(255, 60, 172, 0.8); /* Giữ hover gốc */
+}
+
+/* GIỮ NGUYÊN MÀU TYPEWRITER CỦA INTRO TRONG LIGHT MODE (SỬ DỤNG MÀU GỐC CỦA DARK MODE) */
+body.light-mode .intro-title {
+  background: linear-gradient(90deg, #00cfff, #00ff94, #ff3cac); /* Dùng màu hex gốc của dark mode */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-shadow: none; */ /* Bỏ comment này nếu bạn muốn xóa text-shadow trong light mode */
+}
+
+/* GIỮ NGUYÊN MÀU TYPEWRITER CỦA BANNER TRONG LIGHT MODE (SỬ DỤNG MÀU GỐC CỦA DARK MODE) */
+body.light-mode #banner h2.glow-text, /* Áp dụng cho cả h2 và glow-text bên trong banner */
+body.light-mode .glow-text { /* Đảm bảo cả những chỗ khác dùng glow-text cũng không đổi màu */
+  background: linear-gradient(90deg, #00cfff, #ff3cac); /* Dùng màu hex gốc của dark mode */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-shadow: đã được định nghĩa mặc định và không bị ghi đè, nên sẽ giữ nguyên */
+}
+
+
+/* Các styles khác của light mode vẫn giữ nguyên như đã cung cấp trước đó */
+body.light-mode .section-title {
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-green), var(--accent-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none; /* Bỏ text-shadow nếu không muốn trong light mode */
+}
+
+body.light-mode #banner {
+  background: rgba(0, 123, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+}
+
+body.light-mode .butterfly {
+  color: var(--accent-blue);
+}
+
+body.light-mode .about-content p {
+  color: rgba(14, 14, 14, 0.9);
+}
+
+body.light-mode .social-links a {
+  color: var(--accent-blue);
+}
+
+body.light-mode .skill-card {
+  background: var(--bg-alt);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
+}
+
+body.light-mode .skill-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+}
+
+body.light-mode .skill-icon {
+  color: var(--accent-blue);
+}
+
+body.light-mode .skill-name {
+  color: var(--text-color);
+}
+
+body.light-mode .skill-bar {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .project-card {
+  background: var(--bg-alt);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.15);
+}
+
+body.light-mode .project-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 123, 255, 0.3);
+}
+
+body.light-mode .project-card h3 {
+  color: var(--accent-blue);
+}
+
+body.light-mode .project-card p {
+  color: rgba(14, 14, 14, 0.8);
+}
+
+body.light-mode .btn-link {
+  background: var(--accent-blue);
+  color: white;
+}
+
+body.light-mode .flip-card.big .flip-front,
+body.light-mode .flip-card.no-flip.tkd .flip-front {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 123, 255, 0.05));
+  color: var(--text-color);
+  border: 1px solid var(--accent-blue);
+}
+
+body.light-mode .flip-card.big .flip-front:hover,
+body.light-mode .flip-card.no-flip.tkd .flip-front:hover {
+  box-shadow: 0 0 20px var(--accent-pink);
+  border-color: var(--accent-pink);
+}
+
+body.light-mode #tkdImagesModal {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(0, 123, 255, 0.95));
+  box-shadow: 0 0 40px rgba(0, 123, 255, 0.5);
+}
+
+body.light-mode #tkdImagesModal .close-button {
+  color: var(--accent-pink);
+}
+
+body.light-mode #contact p {
+  color: var(--text-color);
+}
+
+body.light-mode .footer {
+  color: rgba(14, 14, 14, 0.7);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .bubble {
+  background: var(--accent-blue);
+}
+/* ===========================
+   MODE TOGGLE (Light/Dark Mode)
+=========================== */
+#modeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-alt);
+  color: var(--text-color);
+  border: 1px solid var(--accent-blue);
+  border-radius: 8px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  overflow: hidden; /* Rất quan trọng để ẩn các icon khi chúng chuyển đổi */
+}
+
+/* Đảm bảo các icon có vị trí tuyệt đối để chồng lên nhau */
+.sun-icon, .moon-icon {
+  position: absolute;
+  /* Đặt cùng kích thước và căn giữa nếu cần */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1.1rem; /* Đảm bảo kích thước icon phù hợp với nút */
+  line-height: 1; /* Để căn giữa icon theo chiều dọc tốt hơn */
+}
+
+.moon-icon {
+  opacity: 0; /* Mặc định ẩn mặt trăng (khi nền tối) */
+  transition: opacity 0.3s;
+}
+
+.sun-icon {
+  opacity: 1; /* Mặc định hiện mặt trời (khi nền tối) */
+  transition: opacity 0.3s;
+}
+
+/* Style cho nút trong Light Mode */
+body.light-mode #modeToggle {
+  color: var(--bg-color); /* Màu chữ (biểu tượng) thành màu nền chính của light mode (tối) */
+  background: var(--text-color); /* Màu nền của nút thành màu chữ chính của light mode (sáng) */
+  border-color: var(--accent-pink); /* Viền màu hồng accent */
+  box-shadow: 0 0 15px var(--accent-pink); /* Bóng đổ màu hồng accent */
+}
+
+/* Ẩn mặt trời và hiện mặt trăng khi ở Light Mode */
+body.light-mode .sun-icon {
+  opacity: 0; /* Ẩn mặt trời */
+}
+
+body.light-mode .moon-icon {
+  opacity: 1; /* Hiện mặt trăng */
+}
+/* ===========================
+   HIỆU ỨNG LẤP LÁNH (BLING BLING) TRÊN NỀN INTRO
+=========================== */
+.sparkles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Đảm bảo không cản trở tương tác chuột */
+  z-index: 0; /* Đặt dưới nội dung chính */
+}
+
+.sparkle {
+  position: absolute;
+  background: white; /* Màu trắng cho các đốm sáng */
+  border-radius: 50%; /* Hình tròn */
+  /* Các thuộc tính left, width, height, animation-delay, animation-duration được đặt trong HTML */
+  animation: twinkle 2s infinite alternate; /* Hiệu ứng nhấp nháy */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(135, 206, 250, 0.5); /* Hiệu ứng tỏa sáng nhẹ */
+  opacity: 0; /* Ban đầu ẩn */
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1; /* Sáng rõ nhất */
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+/* ===========================
+   SECTION TITLE
+=========================== */
 .section-title {
   font-size: 2.5rem;
+  font-weight: 700;
   text-align: center;
   margin: 40px 0 20px;
-  font-weight: 700;
+  /* Gradient cho tiêu đề */
   background: linear-gradient(90deg, var(--accent-blue), var(--accent-green), var(--accent-pink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
 }
+
 .section-title::after {
   content: '';
   display: block;
   width: 60px;
   height: 4px;
   background: var(--accent-blue);
-  margin: 10px auto 0;
   border-radius: 2px;
   box-shadow: 0 0 10px var(--accent-blue);
+  margin: 10px auto 0;
 }
 
-/* Button */
-.btn-explore {
-  background: var(--accent-pink);
-  color: var(--bg-color);
-  padding: 12px 36px;
-  border: none;
-  border-radius: 50px;
-  font-size: 1.2rem;
-  box-shadow: 0 0 10px var(--accent-pink);
-  transition: all 0.3s ease;
-}
-.btn-explore:hover {
-  background: var(--accent-green);
-  box-shadow: 0 0 20px var(--accent-green);
-  transform: scale(1.1);
-}
-
-/* Banner */
-#banner {
-  background: rgba(0, 207, 255, 0.1);
-  backdrop-filter: blur(8px);
-  padding: 40px 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-.glow-text {
-  font-size: 1.8rem;
-  color: var(--text-color);
-  text-shadow: 0 0 10px var(--accent-blue), 0 0 20px var(--accent-pink);
-  line-height: 1.5;
-}
-
-/* Section backgrounds */
-.section-gradient {
-  background: linear-gradient(135deg, rgba(0, 207, 255, 0.1), rgba(255, 60, 172, 0.1));
-  border-radius: 10px;
-  padding: 20px;
-}
-.section-light {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(4px);
-  border-radius: 10px;
-  padding: 20px;
-}
-.section-dark {
-  background: var(--bg-alt);
-  border-radius: 10px;
-  padding: 20px;
-}
-
-/* BUBBLE + SPARKLE */
-.bubble {
-  background: var(--accent-blue);
-  opacity: 0.8;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  animation: floatUp 10s linear infinite;
-}
-.sparkle {
-  background: var(--accent-green);
-  box-shadow: 0 0 10px var(--accent-green);
-  opacity: 0.8;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  animation: floatUp 8s linear infinite;
-}
-@keyframes floatUp {
-  0% { transform: translateY(0) scale(1); opacity: 1; }
-  100% { transform: translateY(-100vh) scale(1.5); opacity: 1; }
-}
-
-/* PROJECT CARD */
-.project-card {
-  background: var(--bg-alt);
-  border: 1px solid var(--accent-blue);
-  padding: 15px;
-  border-radius: 10px;
-  transition: background 0.3s, border-color 0.3s;
-}
-.project-card:hover {
-  background: var(--bg-color);
-  border-color: var(--accent-pink);
-}
-.flip-front {
-  background: var(--accent-blue);
-  color: #8be9fd;
-}
-.flip-back {
-  /*background: var(--accent-green);*/
-  color: var(--bg-color);
-}
-
-.project-card {
-  background: var(--bg-alt);
-  border: 1px solid var(--accent-blue);
-  padding: 15px;
-  border-radius: 12px;
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-}
-.project-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  border-color: var(--accent-pink);
-  box-shadow: 0 0 15px var(--accent-pink);
-}
-.info-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--accent-green);
-  border-radius: 12px;
-  padding: 15px;
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-.info-card:hover {
-  box-shadow: 0 0 15px var(--accent-green);
-  transform: translateY(-3px);
-}
-.flip-card.big {
-  max-width: 300px;
-  height: 200px;
-}
-.flip-card.big .flip-front {
-  background: var(--accent-pink);
-}
-.flip-card.big .flip-back {
-  background: var(--accent-blue);
-}
-.intro-title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  text-align: center;
-  line-height: 1.2;
-  letter-spacing: 2px;
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-green), var(--accent-pink));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 15px rgba(0, 207, 255, 0.5);
-  animation: glowIntro 3s infinite alternate;
-}
-
-@keyframes glowIntro {
-  from {
-    text-shadow: 0 0 10px var(--accent-blue), 0 0 20px var(--accent-green);
-  }
-  to {
-    text-shadow: 0 0 20px var(--accent-pink), 0 0 30px var(--accent-blue);
-  }
-}
+/* ===========================
+   BUTTON
+=========================== */
 .btn-explore {
   background: var(--accent-pink);
   color: var(--bg-color);
@@ -707,110 +329,477 @@ a:hover {
   box-shadow: 0 0 15px var(--accent-pink);
   transition: all 0.3s ease;
 }
+
 .btn-explore:hover {
   background: var(--accent-green);
   box-shadow: 0 0 25px var(--accent-green);
   transform: scale(1.1);
 }
-#typewriter {
+
+/* ===========================
+   INTRO + BANNER
+=========================== */
+#intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+  background-color: var(--bg-color); /* Đảm bảo nền đen cho trang chào mừng */
+  position: relative;
+  overflow: hidden; /* Ẩn các ngôi sao hay hiệu ứng tràn ra ngoài */
+}
+
+.intro-title {
   font-size: 3.5rem;
   font-weight: 800;
   letter-spacing: 2px;
+  text-align: center;
+  line-height: 1.2;
+  /* Gradient và hiệu ứng glow cho tiêu đề giới thiệu */
   background: linear-gradient(90deg, var(--accent-blue), var(--accent-green), var(--accent-pink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(0, 207, 255, 0.5);
+  animation: glowIntro 3s infinite alternate;
 }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-/*Bướm*/
-.butterflies {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Không cản trở click */
-  overflow: hidden;
+@keyframes glowIntro {
+  from {
+    text-shadow: 0 0 10px var(--accent-blue), 0 0 20px var(--accent-green);
+  }
+
+  to {
+    text-shadow: 0 0 20px var(--accent-pink), 0 0 30px var(--accent-blue);
+  }
 }
 
-.butterfly {
-  position: absolute;
-  bottom: -40px;
-  font-size: 2rem;
-  opacity: 0.8;
-  animation: butterflyFly 6s linear infinite;
+#banner {
+  background: rgba(0, 207, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 40px 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Đảm bảo các phần tử xếp dọc */
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  margin: 20px;
+  position: relative; /* Để bướm bay trong banner */
+  overflow: hidden; /* Đảm bảo bướm không tràn ra ngoài */
 }
 
-@keyframes butterflyFly {
-  0% {
-    transform: translateY(0) translateX(0) rotate(0deg);
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-50vh) translateX(50px) rotate(20deg);
-  }
-  100% {
-    transform: translateY(-100vh) translateX(-50px) rotate(-20deg);
-    opacity: 0.8;
-  }
+.glow-text {
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px var(--accent-blue), 0 0 20px var(--accent-pink);
 }
+
 .glow-text::after {
   content: '';
   display: block;
   width: 60px;
   height: 3px;
-  margin: 8px auto 0;
   background: var(--accent-pink);
-  box-shadow: 0 0 10px var(--accent-pink);
   border-radius: 2px;
+  box-shadow: 0 0 10px var(--accent-pink);
+  margin: 8px auto 0;
 }
+
 #banner-typewriter::after {
   content: '|';
   animation: blink 1s infinite;
 }
 
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
-#banner {
-  min-height: 200px; /* Hoặc chiều cao bạn muốn */
+
+/* Hiệu ứng bướm */
+.butterflies {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.butterfly {
+  position: absolute;
+  color: var(--accent-pink); /* Màu bướm */
+  animation: fly 10s linear infinite;
+  transform: translateY(0);
+  opacity: 0;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); 
+}
+@keyframes fly {
+  0% {
+    transform: translateY(60vh) translateX(0vw) rotate(0deg); /* Bắt đầu từ dưới banner, không lệch ngang */
+    opacity: 0; /* Hoàn toàn trong suốt */
+  }
+  20% {
+    transform: translateY(40vh) translateX(2vw) rotate(5deg); /* Bay lên và hơi lệch sang phải nhẹ nhàng */
+    opacity: 0.5; /* Mờ dần hiện ra */
+  }
+  40% {
+    transform: translateY(20vh) translateX(-2vw) rotate(-5deg); /* Bay lên và hơi lệch sang trái nhẹ nhàng */
+    opacity: 0.8;
+  }
+  60% {
+    transform: translateY(0vh) translateX(3vw) rotate(5deg); /* Bay lên và hơi lệch sang phải, hiện rõ nhất */
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-20vh) translateX(-3vw) rotate(-5deg); /* Tiếp tục bay lên và hơi lệch sang trái */
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-70vh) translateX(0vw) rotate(0deg); /* Bay hoàn toàn ra khỏi màn hình phía trên, không lệch ngang */
+    opacity: 0; /* Biến mất */
+  }
+}
+
+
+/* ===========================
+   PERSONAL INFO SECTION
+=========================== */
+#about {
+  padding: 20px;
+}
+
+.intro-content {
+  max-width: 800px; /* Giới hạn chiều rộng cho phần giới thiệu */
+  margin: 20px auto 40px auto; /* Tăng khoảng cách dưới */
+}
+
+.about-me-grid { 
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Ảnh chiếm 1 phần, thông tin chiếm 2 phần */
+  gap: 30px; /* Tăng khoảng cách giữa ảnh và thông tin */
+  max-width: 1000px;
+  margin: 20px auto;
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+
+.info-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--accent-green);
+  border-radius: 12px;
+  padding: 15px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.info-card:hover {
+  box-shadow: 0 0 15px var(--accent-green);
+  transform: translateY(-3px);
+}
+
+.info-table .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.info-table .row p {
+  flex: 1;
+  padding-right: 10px;
+}
+
+/* ===========================
+   PERSONAL INFO SECTION - AVATAR (Soft Inner Glow / Volumetric Light)
+=========================== */
+.avatar {
+  text-align: center;
+  position: relative;
+  width: 250px; /* Kích thước tổng thể cho khu vực ảnh */
+  height: 250px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50%; /* Khung tròn tổng thể */
+  overflow: hidden; /* Đảm bảo mọi thứ nằm gọn */
+  background: transparent; /* Nền trong suốt */
+  /* Loại bỏ các border và box-shadow cứng ở đây */
+}
+
+.avatar img {
+  width: 220px; /* Kích thước ảnh, lớn hơn để chiếm diện tích */
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%; /* Ảnh vẫn là hình tròn */
+  position: relative;
+  z-index: 2; /* Đảm bảo ảnh nằm trên mọi hiệu ứng */
+  /* Bỏ viền hồng cứng ở đây */
+  /* Sử dụng filter drop-shadow để tạo hiệu ứng glow mềm mại *từ ảnh* */
+  filter: drop-shadow(0 0 15px var(--accent-blue)) /* Glow xanh chính */
+          drop-shadow(0 0 30px var(--accent-pink)); /* Glow hồng phụ */
+  transition: all 0.4s ease-in-out;
+}
+
+/* Lớp Aura 1: Nằm dưới ảnh, tạo hiệu ứng lan tỏa ánh sáng */
+.avatar::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%; /* Bằng kích thước khung avatar */
+  height: 100%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.8); /* Bắt đầu nhỏ hơn, ở giữa */
+  background: radial-gradient(circle, rgba(0, 207, 255, 0.5) 0%, transparent 70%); /* Lan tỏa màu xanh */
+  box-shadow: 0 0 50px var(--accent-blue), /* Glow mạnh cho aura xanh */
+              0 0 80px rgba(255, 60, 172, 0.4); /* Glow nhẹ màu hồng */
+  animation: auraPulse 5s infinite alternate ease-in-out; /* Animation thở */
+  z-index: 1; /* Nằm dưới ảnh, trên lớp aura 2 */
+  opacity: 0.9;
+}
+
+/* Lớp Aura 2: Xa hơn, tạo hiệu ứng chiều sâu và màu phụ */
+.avatar::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%; /* Lớn hơn khung avatar */
+  height: 120%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.7); /* Bắt đầu nhỏ hơn, ở giữa */
+  background: radial-gradient(circle, rgba(0, 255, 148, 0.3) 0%, transparent 80%); /* Lan tỏa màu xanh lá */
+  box-shadow: 0 0 70px var(--accent-green), /* Glow mạnh xanh lá */
+              0 0 100px rgba(0, 207, 255, 0.3); /* Glow nhẹ xanh dương */
+  animation: auraPulse 7s infinite alternate-reverse ease-in-out; /* Animation thở ngược chiều, chậm hơn */
+  z-index: 0; /* Nằm dưới cùng */
+  opacity: 0.7;
+}
+
+/* Hiệu ứng khi hover */
+.avatar:hover img {
+  transform: scale(1.08); /* Ảnh phóng to nhẹ */
+  filter: drop-shadow(0 0 20px var(--accent-green)) /* Đổi glow ảnh sang xanh lá */
+          drop-shadow(0 0 40px var(--accent-blue)); /* Thêm glow xanh dương */
+}
+
+/* Tăng cường aura khi hover */
+.avatar:hover::before {
+  box-shadow: 0 0 60px var(--accent-green), 0 0 100px var(--accent-pink);
+  transform: translate(-50%, -50%) scale(1.0); /* Mở rộng aura gần ảnh */
+  opacity: 1;
+}
+
+.avatar:hover::after {
+  box-shadow: 0 0 80px var(--accent-pink), 0 0 120px var(--accent-blue);
+  transform: translate(-50%, -50%) scale(0.9); /* Mở rộng aura xa hơn */
+  opacity: 0.9;
+}
+
+/* Animation  cho aura */
+@keyframes auraPulse {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.9; }
+  50% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.9; }
+}
+
+/* Responsive  */
+@media(max-width: 768px) {
+  .about-me-grid {
+    grid-template-columns: 1fr;
+  }
+  .avatar {
+    order: -1;
+    margin-bottom: 20px;
+  }
+}
+
+/* ===========================
+   GOALS SECTION
+=========================== */
+#goals {
+  padding: 20px;
   text-align: center;
 }
+
+.pill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.pill-list li {
+  background: rgba(0, 207, 255, 0.1);
+  border: 1px solid var(--accent-blue);
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  box-shadow: 0 0 10px rgba(0, 207, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.pill-list li:hover {
+  background: var(--accent-blue);
+  color: var(--bg-color);
+  box-shadow: 0 0 20px var(--accent-blue);
+  transform: translateY(-3px);
+}
+
+/* ===========================
+   HOBBIES SECTION (Flip Cards)
+=========================== */
+#hobbies {
+  padding: 20px;
+}
+
+.card-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flip-card {
+  background: transparent;
+  perspective: 1000px;
+  height: 150px; /* Chiều cao cố định cho card */
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.flip-front {
+  background: linear-gradient(135deg, rgba(159, 166, 168, 0.1), rgba(24, 144, 184, 0.1)); /* Hiệu ứng glassmorphism nhẹ */
+  border: 1px solid var(--accent-blue);
+}
+
+.flip-front:hover {
+  box-shadow: 0 0 20px var(--accent-pink);
+  border-color: var(--accent-pink);
+}
+
+.flip-back {
+  background: var(--accent-green);
+  color: var(--bg-color);
+  transform: rotateY(180deg);
+  flex-direction: column; /* icon và chữ xếp dọc */
+}
+
+.flip-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.flip-back .fab,
+.flip-back .fas {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.flip-card.no-flip .flip-inner {
+  transform: rotateY(0deg) !important; /* Vô hiệu hóa lật cho các card không có mặt sau */
+}
+
+.flip-card.no-flip .flip-front {
+  background: linear-gradient(135deg, rgba(159, 166, 168, 0.1), rgba(24, 144, 184, 0.1));
+  border: 1px solid var(--accent-blue);
+}
+.flip-card.no-flip .flip-front:hover {
+  box-shadow: 0 0 20px var(--accent-pink);
+  border-color: var(--accent-pink);
+}
+
+.flip-back.music,
+.flip-back.chess {
+  cursor: pointer; /*  con trỏ chuột thành ngón tay bấm */
+}
+
+.flip-back.music p,
+.flip-back.chess p {
+  transition: text-decoration 0.3s ease; 
+}
+
+/*.flip-back.music:hover p,
+.flip-back.chess:hover p {
+  text-decoration: underline;  Gạch chân khi di chuột qua cả mặt sau 
+*/
+
+
+/* ===========================
+   SKILLS & LANGUAGES SECTION
+=========================== */
+#skills {
+  padding: 20px;
+}
+
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
 }
 
 .glass-box {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05); /* Hiệu ứng glassmorphism nhẹ */
+  border: 1px solid var(--accent-green);
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 0 15px rgba(0, 207, 255, 0.1);
-  backdrop-filter: blur(6px);
+  box-shadow: 0 0 10px rgba(0, 255, 148, 0.3);
 }
 
 .glass-box h3 {
-  text-align: center;
-  color: var(--accent-blue);
-  margin-bottom: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--accent-green);
+  text-shadow: 0 0 8px rgba(0, 255, 148, 0.5);
 }
 
 .bar {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 15px;  /* tăng khoảng cách giữa các bar */
-  position: relative;
-  height: 24px;  /* từ 14px → 24px cho bar bự hơn */
+  margin-bottom: 15px;
+  height: 24px;
 }
 
 .bar span {
@@ -818,82 +807,376 @@ a:hover {
   align-items: center;
   padding-left: 10px;
   height: 100%;
-  width: 0; /* animation từ 0 */
-  background: linear-gradient(90deg,  #0c3573, #8dc4d6);
+  /* Gradient cho thanh tiến độ */
+  background: linear-gradient(90deg, #0c3573, #8dc4d6);
   box-shadow: 0 0 10px var(--accent-blue);
   border-radius: 8px;
-  font-size: 1rem; /* chỉnh font cho dễ đọc */
-  color: #f8f8f2; /* chữ trong bar dễ đọc */
+  font-size: 1rem;
   white-space: nowrap;
-}
-.flip-back {
-  padding: 0;         /* bỏ padding để ảnh sát card */
-  display: block;     /* không cần flex nếu chỉ muốn fill */
+  color: #f8f8f2;
+  transition: width 1s ease-out; /* Animation cho thanh tiến độ */
 }
 
-.flip-back img {
+/* ===========================
+   CERTIFICATES SECTION
+=========================== */
+#certificate {
+  padding: 20px;
+  text-align: center;
+}
+
+.certificates-cards-wrapper {
+  display: flex; /* xếp các thẻ ngang hàng */
+  flex-wrap: wrap; /* Cho phép xuống hàng trên màn hình nhỏ */
+  justify-content: center; /* Căn giữa các thẻ theo chiều ngang */
+  align-items: flex-start; /* Căn chỉnh các thẻ từ trên xuống */
+  max-width: 900px; /* Giới hạn chiều rộng, không sát mép */
+  margin: 20px auto; /* Căn giữa và tạo khoảng cách trên dưới */
+  gap: 20px; /* Khoảng cách giữa hai thẻ */
+}
+
+/* (Thẻ 1) */
+.flip-card.big {
+  width: calc(50% - 10px); /* Mỗi thẻ chiếm khoảng 50% trừ đi một nửa khoảng cách */
+  max-width: 450px; /* Giới hạn chiều rộng tối đa */
+  height: 300px; /* Chiều cao cố định */
+  margin: 0; 
+}
+
+.flip-card.big .flip-back{
+  padding: 0;         /* bỏ padding để ảnh sát card */
+  display: block;     
+}
+
+.flip-card.big .flip-back img {
   width: 100%;        /* fit ngang sát card */
   height: 100%;       /* fit dọc sát card */
   object-fit: cover;  /* fill toàn bộ card, cắt ảnh nếu cần */
-  border-radius: 12px; /* bo góc trùng với card (nếu card bo góc) */
+  border-radius: 12px;
 }
-.flip-back img:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
+
+/* (Thẻ 2) */
+.flip-card.no-flip.tkd {
+  width: calc(50% - 10px); 
+  max-width: 450px;
+  height: 300px; 
+  margin: 0; 
 }
-.flip-front {
-  background: linear-gradient(135deg, rgba(159, 166, 168, 0.1), rgba(24, 144, 184, 0.1));
+
+.flip-card.no-flip.tkd .flip-front { 
+  background: linear-gradient(135deg, rgba(159, 166, 168, 0.1), rgba(24, 144, 184, 0.1)); /* Giữ màu nền giống flip-front */
+  border: 1px solid var(--accent-blue);
+  cursor: pointer; /* Con trỏ ngón tay */
+  transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.flip-card.no-flip.tkd .flip-front:hover {
+  box-shadow: 0 0 20px var(--accent-pink); 
+  border-color: var(--accent-pink);
+  transform: translateY(-3px); /* Nâng lên nhẹ */
+}
+
+
+/* ===========================
+   MODAL HIỂN THỊ HÌNH ẢNH TAEKWONDO (GIỮ NGUYÊN)
+=========================== */
+#tkdImagesModal {
+  display: none; /* Ẩn mặc định */
+  position: fixed; /* Hiển thị trên tất cả nội dung */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Căn giữa màn hình */
+  background: linear-gradient(135deg, rgba(159, 166, 168, 0.95), rgba(24, 144, 184, 0.95)); /* Màu nền giống flip-front nhưng đậm hơn chút */
   border: 1px solid var(--accent-blue);
   border-radius: 12px;
-  padding: 20px;
+  padding: 30px; /* Thêm padding */
+  z-index: 1000; /* Đảm bảo hiển thị trên cùng */
+  box-shadow: 0 0 40px var(--accent-blue); /* Thêm shadow để nổi bật */
+  max-width: 90%; /* Giới hạn chiều rộng */
+  max-height: 90vh; /* Giới hạn chiều cao */
+  overflow-y: auto; /* Cho phép cuộn nếu nhiều hình */
+}
+
+#tkdImagesModal .modal-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Bố cục lưới đẹp hơn cho hình ảnh */
+  gap: 15px; /* Khoảng cách giữa các hình */
+  padding-top: 10px; /* Khoảng cách từ nút X đến hình ảnh */
+}
+
+#tkdImagesModal img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+  /* Hiệu ứng animation từng hình từng hình nhảy vào */
+  opacity: 0; /* Ẩn ban đầu */
+  transform: translateY(50px) scale(0.7); /* Bắt đầu từ dưới và nhỏ hơn */
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Animation "nhảy" */
+}
+
+#tkdImagesModal img.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+#tkdImagesModal .close-button {
+  position: absolute;
+  top: 15px; /* Dịch xuống một chút */
+  right: 15px; /* Dịch vào một chút */
+  font-size: 1.8rem; /* Nút X lớn hơn */
   font-weight: bold;
-  font-size: 1.1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(109, 147, 155, 0.2);
-  transition: transform 0.5s, box-shadow 0.3s, border-color 0.3s;
+  color: var(--accent-pink);
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: transform 0.2s, color 0.2s;
 }
 
-.flip-front:hover {
-  box-shadow: 0 0 20px var(--accent-pink);
-  border-color: var(--accent-pink);
-  transform: scale(1.05);
+#tkdImagesModal .close-button:hover {
+  transform: rotate(90deg); /* Hiệu ứng xoay khi hover */
+  color: var(--accent-green); /* Đổi màu khi hover */
+}
+/* ===========================
+   PROJECTS SECTION
+=========================== */
+#projects {
+  padding: 20px;
 }
 
-.flip-front-icon {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: var(--accent-blue);
+.project-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
 }
 
-#certificate .flip-front {
-  background: linear-gradient(135deg, rgba(157, 170, 173, 0.1), rgba(24, 68, 78, 0.1));
+.project-card {
+  background: var(--bg-alt);
   border: 1px solid var(--accent-blue);
-  border-radius: 12px;
   padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 15px var(--accent-pink);
+}
+
+.project-card h3 {
+  font-size: 1.4rem;
+  color: var(--accent-blue);
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.project-card strong {
+  color: var(--accent-green);
+}
+
+.link-arrow {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--accent-pink);
   font-weight: bold;
-  font-size: 1.1rem;
-  display: flex;
-  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.link-arrow:hover {
+  transform: translateX(5px);
+}
+
+/* ===========================
+   CONTACT SECTION
+=========================== */
+#contact {
+  padding: 40px 20px;
+  text-align: center;
+  background: var(--bg-alt); /* Nền hơi khác biệt để tách biệt */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icons {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 207, 255, 0.2);
-  transition: transform 0.5s, box-shadow 0.3s, border-color 0.3s;
-}
-
-#certificate .flip-front:hover {
-  box-shadow: 0 0 20px var(--accent-pink);
-  border-color: var(--accent-pink);
-  transform: scale(1.05);
-}
-
-#certificate .flip-front-icon {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  border: 2px solid var(--accent-blue);
+  border-radius: 50%;
   color: var(--accent-blue);
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
 }
 
+.social-icons a:hover {
+  background: var(--accent-pink);
+  color: var(--bg-color);
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 15px var(--accent-pink);
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* ===========================
+   TOP BUTTON
+=========================== */
+#topBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--accent-pink);
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px; /* Điều chỉnh padding cho phù hợp với mũi tên */
+  font-size: 1.5rem;
+  color: #fff;
+  box-shadow: 0 0 10px var(--accent-pink);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+
+#topBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#topBtn:hover {
+  transform: scale(1.2);
+}
+
+/* ===========================
+   BUBBLE + SPARKLE EFFECTS
+=========================== */
+.bubbles, .sparkles {
+  position: fixed; /* Giữ các hiệu ứng ở vị trí cố định trên màn hình */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Cho phép tương tác với các yếu tố bên dưới */
+  overflow: hidden; /* Đảm bảo không tràn ra ngoài */
+  z-index: -1; /* Đặt sau nội dung */
+}
+
+.bubble,
+.sparkle {
+  position: absolute;
+  bottom: -50px; /* Bắt đầu từ dưới màn hình */
+  border-radius: 50%;
+  animation: floatUp 10s linear infinite;
+}
+
+.bubble {
+  background: var(--accent-blue);
+  width: 10px;
+  height: 10px;
+  opacity: 0.8;
+}
+
+.sparkle {
+  background: var(--accent-green);
+  width: 6px;
+  height: 6px;
+  box-shadow: 0 0 10px var(--accent-green);
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0; /* Biến mất dần khi lên cao */
+  }
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: rgba(248, 248, 248, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media(max-width: 768px) {
+  .intro-title {
+    font-size: 2.8rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .card-wrap,
+  .skill-grid,
+  .project-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr; /* Stack info cards on smaller screens */
+  }
+
+  .avatar {
+    order: -1; /* Đặt ảnh đại diện lên đầu trên mobile */
+  }
+}
+
+@media(max-width: 480px) {
+  .intro-title {
+    font-size: 2rem;
+  }
+
+  .btn-explore {
+    font-size: 1.1rem;
+    padding: 12px 30px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .card-wrap,
+  .skill-grid,
+  .project-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .pill-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-icons a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+}

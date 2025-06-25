@@ -21,19 +21,26 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   const modeToggle = document.getElementById('modeToggle');
-  if (modeToggle) {
-    modeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-    });
+  const body = document.body;
+
+  modeToggle.addEventListener('click', function() {
+    body.classList.toggle('light-mode');
+    localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+  });
+
+  // Kiểm tra trạng thái đã lưu khi tải trang
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    body.classList.add('light-mode');
   }
 
-  const tkdFlip = document.querySelector('.tkd .flip-card');
+ /* const tkdFlip = document.querySelector('.tkd .flip-card');
   if (tkdFlip) {
     tkdFlip.addEventListener('click', () => {
       const slider = document.getElementById('medalSlider');
       if (slider) slider.classList.toggle('hidden');
     });
-  }
+  }*/
 });
 document.addEventListener('DOMContentLoaded', function() {
   const topBtn = document.getElementById('topBtn');
@@ -73,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function typeBanner() {
     const lines = [
       "Xin chào, mình là Nguyễn Ngọc Như Ý",
-      "Hello, I am Nguyen Ngoc Nhu Y",
+      "Hello, I am Nynn",
       "你好，我是阮玉如意"
     ];
     const speed = 100;         // tốc độ gõ ký tự
@@ -144,3 +151,51 @@ document.addEventListener('scroll', () => {
     }
   });
 });
+// Tìm thẻ Taekwondo certificate (Thẻ 2)
+const tkdCard = document.querySelector('.flip-card.no-flip.tkd'); // Đã thêm lại .no-flip vào selector
+
+// Tìm modal và content của modal
+const tkdImagesModal = document.getElementById('tkdImagesModal');
+const tkdModalContent = tkdImagesModal.querySelector('.modal-content');
+
+// Mảng chứa đường dẫn đến các hình ảnh Taekwondo cho modal
+const taekwondoImagesList = [
+  'images/d1.jpg',
+  'images/b1.jpg',
+  'images/b2.jpg'
+  // Thêm các đường dẫn hình ảnh khác của bạn vào đây
+];
+
+// Gán sự kiện click cho thẻ Taekwondo (Thẻ 2)
+if (tkdCard) {
+  tkdCard.addEventListener('click', () => {
+    tkdModalContent.innerHTML = ''; // Xóa bất kỳ hình ảnh cũ nào
+
+    taekwondoImagesList.forEach((imageSrc, index) => {
+      const img = document.createElement('img');
+      img.src = imageSrc;
+      tkdModalContent.appendChild(img);
+
+      // Animation "nhảy" vào từng hình
+      setTimeout(() => {
+        img.classList.add('show');
+      }, index * 100);
+    });
+
+    tkdImagesModal.style.display = 'block'; // Hiển thị modal
+  });
+}
+
+// Hàm đóng modal
+function closeTkdModal() {
+  tkdImagesModal.style.display = 'none';
+  tkdModalContent.innerHTML = ''; // Dọn dẹp hình ảnh khi đóng
+}
+
+// Đóng modal khi nhấp ra ngoài khu vực modal
+window.addEventListener('click', (event) => {
+  if (event.target === tkdImagesModal) {
+    closeTkdModal();
+  }
+});
+
