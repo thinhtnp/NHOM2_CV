@@ -2,12 +2,12 @@
    ROOT VARIABLES
 =========================== */
 :root {
-  --bg-color: #0e0e0e; /* Màu nền chính (rất tối) */
+  --bg-color: #0e0e0e; /* nền chính */
   --bg-alt: #1a1a1a;
-  --text-color: #f8f8f8; /* Màu chữ chính */
-  --accent-blue: #00cfff; /* Màu xanh dương neon */
-  --accent-green: #00ff94; /* Màu xanh lá neon */
-  --accent-pink: #ff3cac; /* Màu hồng neon */
+  --text-color: #f8f8f8; /* chữ chính */
+  --accent-blue: #00cfff; /* xanh dương neon */
+  --accent-green: #00ff94; /* xanh lá neon */
+  --accent-pink: #ff3cac; /* hồng neon */
 }
 
 /* ===========================
@@ -45,47 +45,41 @@ button {
   display: none;
 }
 /* ===========================
-   LIGHT MODE STYLES (ĐÃ CHỈNH SỬA LẠI THEO YÊU CẦU MỚI)
+   LIGHT MODE STYLES 
 =========================== */
 body.light-mode {
   --bg-color: #f8f8f8; /* Nền sáng */
   --bg-alt: #ffffff;
   --text-color: #0e0e0e; /* Chữ tối */
-  --accent-blue: #007bff; /* Màu xanh dương accent cho Light Mode */
-  --accent-green: #28a745; /* Màu xanh lá accent cho Light Mode */
-  --accent-pink: #dc3545; /* Màu hồng accent cho Light Mode */
+  --accent-blue: #007bff; /* Màu xanh dương accent */
+  --accent-green: #28a745; /* Màu xanh lá accent */
+  --accent-pink: #dc3545; /* Màu hồng accent */
 }
 
-/* GIỮ NGUYÊN MÀU CỦA NÚT EXPLORE TRONG LIGHT MODE (SỬ DỤNG MÀU GỐC CỦA DARK MODE) */
 body.light-mode .btn-explore {
-  background: linear-gradient(45deg, #00cfff, #ff3cac); /* Dùng màu hex gốc của dark mode */
+  background: linear-gradient(45deg, #00cfff, #ff3cac); 
   color: white; /* Đảm bảo chữ trắng */
-  box-shadow: 0 0 20px rgba(0, 207, 255, 0.6); /* Bóng đổ gốc của dark mode */
+  box-shadow: 0 0 20px rgba(0, 207, 255, 0.6); 
 }
 body.light-mode .btn-explore:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 207, 255, 0.8), 0 0 40px rgba(255, 60, 172, 0.8); /* Giữ hover gốc */
+  box-shadow: 0 10px 30px rgba(0, 207, 255, 0.8), 0 0 40px rgba(255, 60, 172, 0.8); 
 }
 
-/* GIỮ NGUYÊN MÀU TYPEWRITER CỦA INTRO TRONG LIGHT MODE (SỬ DỤNG MÀU GỐC CỦA DARK MODE) */
+
 body.light-mode .intro-title {
-  background: linear-gradient(90deg, #00cfff, #00ff94, #ff3cac); /* Dùng màu hex gốc của dark mode */
+  background: linear-gradient(90deg, #00cfff, #00ff94, #ff3cac); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* text-shadow: none; */ /* Bỏ comment này nếu bạn muốn xóa text-shadow trong light mode */
+  
 }
-
-/* GIỮ NGUYÊN MÀU TYPEWRITER CỦA BANNER TRONG LIGHT MODE (SỬ DỤNG MÀU GỐC CỦA DARK MODE) */
-body.light-mode #banner h2.glow-text, /* Áp dụng cho cả h2 và glow-text bên trong banner */
-body.light-mode .glow-text { /* Đảm bảo cả những chỗ khác dùng glow-text cũng không đổi màu */
-  background: linear-gradient(90deg, #00cfff, #ff3cac); /* Dùng màu hex gốc của dark mode */
+body.light-mode #banner h2.glow-text, 
+body.light-mode .glow-text 
+  background: linear-gradient(90deg, #00cfff, #ff3cac); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* text-shadow: đã được định nghĩa mặc định và không bị ghi đè, nên sẽ giữ nguyên */
 }
 
-
-/* Các styles khác của light mode vẫn giữ nguyên như đã cung cấp trước đó */
 body.light-mode .section-title {
   background: linear-gradient(90deg, var(--accent-blue), var(--accent-green), var(--accent-pink));
   -webkit-background-clip: text;
@@ -210,8 +204,6 @@ body.light-mode .bubble {
   transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
   overflow: hidden; /* Rất quan trọng để ẩn các icon khi chúng chuyển đổi */
 }
-
-/* Đảm bảo các icon có vị trí tuyệt đối để chồng lên nhau */
 .sun-icon, .moon-icon {
   position: absolute;
   /* Đặt cùng kích thước và căn giữa nếu cần */
@@ -234,7 +226,7 @@ body.light-mode .bubble {
   transition: opacity 0.3s;
 }
 
-/* Style cho nút trong Light Mode */
+
 body.light-mode #modeToggle {
   color: var(--bg-color); /* Màu chữ (biểu tượng) thành màu nền chính của light mode (tối) */
   background: var(--text-color); /* Màu nền của nút thành màu chữ chính của light mode (sáng) */
@@ -251,7 +243,7 @@ body.light-mode .moon-icon {
   opacity: 1; /* Hiện mặt trăng */
 }
 /* ===========================
-   HIỆU ỨNG LẤP LÁNH (BLING BLING) TRÊN NỀN INTRO
+   HIỆU ỨNG LẤP LÁNH TRÊN NỀN INTRO
 =========================== */
 .sparkles-container {
   position: absolute;
@@ -259,7 +251,7 @@ body.light-mode .moon-icon {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Đảm bảo không cản trở tương tác chuột */
+  pointer-events: none; 
   z-index: 0; /* Đặt dưới nội dung chính */
 }
 
@@ -267,7 +259,6 @@ body.light-mode .moon-icon {
   position: absolute;
   background: white; /* Màu trắng cho các đốm sáng */
   border-radius: 50%; /* Hình tròn */
-  /* Các thuộc tính left, width, height, animation-delay, animation-duration được đặt trong HTML */
   animation: twinkle 2s infinite alternate; /* Hiệu ứng nhấp nháy */
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(135, 206, 250, 0.5); /* Hiệu ứng tỏa sáng nhẹ */
   opacity: 0; /* Ban đầu ẩn */
@@ -296,7 +287,6 @@ body.light-mode .moon-icon {
   font-weight: 700;
   text-align: center;
   margin: 40px 0 20px;
-  /* Gradient cho tiêu đề */
   background: linear-gradient(90deg, var(--accent-blue), var(--accent-green), var(--accent-pink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -351,12 +341,11 @@ body.light-mode .moon-icon {
 }
 
 .intro-title {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   font-weight: 800;
   letter-spacing: 2px;
   text-align: center;
-  line-height: 1.2;
-  /* Gradient và hiệu ứng glow cho tiêu đề giới thiệu */
+  line-height: 2;
   background: linear-gradient(90deg, var(--accent-blue), var(--accent-green), var(--accent-pink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -381,13 +370,13 @@ body.light-mode .moon-icon {
   border-radius: 10px;
   text-align: center;
   display: flex;
-  flex-direction: column; /* Đảm bảo các phần tử xếp dọc */
+  flex-direction: column; /* xếp dọc */
   justify-content: center;
   align-items: center;
   min-height: 200px;
   margin: 20px;
-  position: relative; /* Để bướm bay trong banner */
-  overflow: hidden; /* Đảm bảo bướm không tràn ra ngoài */
+  position: relative; /* bướm bay trong banner */
+  overflow: hidden;
 }
 
 .glow-text {
@@ -516,21 +505,20 @@ body.light-mode .moon-icon {
 }
 
 /* ===========================
-   PERSONAL INFO SECTION - AVATAR (Soft Inner Glow / Volumetric Light)
-=========================== */
+   PERSONAL INFO SECTION - AVATAR 
 .avatar {
   text-align: center;
   position: relative;
-  width: 250px; /* Kích thước tổng thể cho khu vực ảnh */
+  width: 250px; /* Kích thước */
   height: 250px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%; /* Khung tròn tổng thể */
-  overflow: hidden; /* Đảm bảo mọi thứ nằm gọn */
+  border-radius: 50%; /* Khung tròn */
+  overflow: hidden; 
   background: transparent; /* Nền trong suốt */
-  /* Loại bỏ các border và box-shadow cứng ở đây */
+  
 }
 
 .avatar img {
@@ -539,15 +527,12 @@ body.light-mode .moon-icon {
   object-fit: cover;
   border-radius: 50%; /* Ảnh vẫn là hình tròn */
   position: relative;
-  z-index: 2; /* Đảm bảo ảnh nằm trên mọi hiệu ứng */
-  /* Bỏ viền hồng cứng ở đây */
-  /* Sử dụng filter drop-shadow để tạo hiệu ứng glow mềm mại *từ ảnh* */
-  filter: drop-shadow(0 0 15px var(--accent-blue)) /* Glow xanh chính */
-          drop-shadow(0 0 30px var(--accent-pink)); /* Glow hồng phụ */
+  z-index: 2; 
+  filter: drop-shadow(0 0 15px var(--accent-blue)) /* chính */
+          drop-shadow(0 0 30px var(--accent-pink)); /* phụ */
   transition: all 0.4s ease-in-out;
 }
 
-/* Lớp Aura 1: Nằm dưới ảnh, tạo hiệu ứng lan tỏa ánh sáng */
 .avatar::before {
   content: '';
   position: absolute;
@@ -565,13 +550,12 @@ body.light-mode .moon-icon {
   opacity: 0.9;
 }
 
-/* Lớp Aura 2: Xa hơn, tạo hiệu ứng chiều sâu và màu phụ */
 .avatar::after {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 120%; /* Lớn hơn khung avatar */
+  width: 120%; 
   height: 120%;
   border-radius: 50%;
   transform: translate(-50%, -50%) scale(0.7); /* Bắt đầu nhỏ hơn, ở giữa */
@@ -878,7 +862,7 @@ body.light-mode .moon-icon {
 
 
 /* ===========================
-   MODAL HIỂN THỊ HÌNH ẢNH TAEKWONDO (GIỮ NGUYÊN)
+   MODAL HIỂN THỊ HÌNH ẢNH TAEKWONDO
 =========================== */
 #tkdImagesModal {
   display: none; /* Ẩn mặc định */
@@ -886,20 +870,20 @@ body.light-mode .moon-icon {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* Căn giữa màn hình */
-  background: linear-gradient(135deg, rgba(159, 166, 168, 0.95), rgba(24, 144, 184, 0.95)); /* Màu nền giống flip-front nhưng đậm hơn chút */
+  background: linear-gradient(135deg, rgba(159, 166, 168, 0.95), rgba(24, 144, 184, 0.95)); 
   border: 1px solid var(--accent-blue);
   border-radius: 12px;
-  padding: 30px; /* Thêm padding */
+  padding: 30px; 
   z-index: 1000; /* Đảm bảo hiển thị trên cùng */
-  box-shadow: 0 0 40px var(--accent-blue); /* Thêm shadow để nổi bật */
-  max-width: 90%; /* Giới hạn chiều rộng */
-  max-height: 90vh; /* Giới hạn chiều cao */
+  box-shadow: 0 0 40px var(--accent-blue); 
+  max-width: 90%; 
+  max-height: 90vh; 
   overflow-y: auto; /* Cho phép cuộn nếu nhiều hình */
 }
 
 #tkdImagesModal .modal-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Bố cục lưới đẹp hơn cho hình ảnh */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Bố cục lưới*/
   gap: 15px; /* Khoảng cách giữa các hình */
   padding-top: 10px; /* Khoảng cách từ nút X đến hình ảnh */
 }
@@ -909,8 +893,8 @@ body.light-mode .moon-icon {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
-  /* Hiệu ứng animation từng hình từng hình nhảy vào */
+  object-fit: cover; /* hình ảnh không bị méo */
+
   opacity: 0; /* Ẩn ban đầu */
   transform: translateY(50px) scale(0.7); /* Bắt đầu từ dưới và nhỏ hơn */
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Animation "nhảy" */
@@ -923,9 +907,9 @@ body.light-mode .moon-icon {
 
 #tkdImagesModal .close-button {
   position: absolute;
-  top: 15px; /* Dịch xuống một chút */
-  right: 15px; /* Dịch vào một chút */
-  font-size: 1.8rem; /* Nút X lớn hơn */
+  top: 15px; 
+  right: 15px; 
+  font-size: 1.8rem; 
   font-weight: bold;
   color: var(--accent-pink);
   cursor: pointer;
@@ -1001,7 +985,7 @@ body.light-mode .moon-icon {
 #contact {
   padding: 40px 20px;
   text-align: center;
-  background: var(--bg-alt); /* Nền hơi khác biệt để tách biệt */
+  background: var(--bg-alt); 
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1042,7 +1026,7 @@ body.light-mode .moon-icon {
   background: var(--accent-pink);
   border: none;
   border-radius: 50%;
-  padding: 10px 15px; /* Điều chỉnh padding cho phù hợp với mũi tên */
+  padding: 10px 15px; 
   font-size: 1.5rem;
   color: #fff;
   box-shadow: 0 0 10px var(--accent-pink);
@@ -1065,14 +1049,14 @@ body.light-mode .moon-icon {
    BUBBLE + SPARKLE EFFECTS
 =========================== */
 .bubbles, .sparkles {
-  position: fixed; /* Giữ các hiệu ứng ở vị trí cố định trên màn hình */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none; /* Cho phép tương tác với các yếu tố bên dưới */
-  overflow: hidden; /* Đảm bảo không tràn ra ngoài */
-  z-index: -1; /* Đặt sau nội dung */
+  overflow: hidden; 
+  z-index: -1; 
 }
 
 .bubble,
@@ -1141,11 +1125,11 @@ body.light-mode .moon-icon {
   }
 
   .info-grid {
-    grid-template-columns: 1fr; /* Stack info cards on smaller screens */
+    grid-template-columns: 1fr; 
   }
 
   .avatar {
-    order: -1; /* Đặt ảnh đại diện lên đầu trên mobile */
+    order: -1; 
   }
 }
 
