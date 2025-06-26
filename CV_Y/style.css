@@ -1,3 +1,1240 @@
+<<<<<<< HEAD
+/* ===========================
+   ROOT VARIABLES
+=========================== */
+:root {
+  --bg-color: #0e0e0e; /* nền chính (rất tối) */
+  --bg-alt: #1a1a1a;
+  --text-color: #f8f8f8; /* chữ chính */
+  --accent-blue: #00cfff; /* xanh dương neon */
+  --accent-green: #00ff94; /* xanh lá neon */
+  --accent-pink: #ff3cac; /* hồng neon */
+}
+
+/* ===========================
+   BASE RESET + BODY + LINK
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--accent-pink);
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Ẩn phần profile ban đầu */
+#profile.hidden {
+  display: none;
+}
+/* ===========================
+   LIGHT MODE STYLES 
+=========================== */
+body.light-mode {
+  --bg-color: #f8f8f8; /* Nền sáng */
+  --bg-alt: #ffffff;
+  --text-color: #0e0e0e; /* Chữ tối */
+  --accent-blue: #007bff; /* Màu xanh dương accent */
+  --accent-green: #28a745; /* Màu xanh lá accent */
+  --accent-pink: #dc3545; /* Màu hồng accent */
+}
+
+body.light-mode .btn-explore {
+  background: linear-gradient(45deg, #00cfff, #ff3cac); 
+  color: white; /* Đảm bảo chữ trắng */
+  box-shadow: 0 0 20px rgba(0, 207, 255, 0.6); 
+}
+body.light-mode .btn-explore:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 207, 255, 0.8), 0 0 40px rgba(255, 60, 172, 0.8); 
+}
+
+body.light-mode .intro-title {
+  background: linear-gradient(90deg, #00cfff, #00ff94, #ff3cac); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.light-mode #banner h2.glow-text, 
+body.light-mode .glow-text { 
+  background: linear-gradient(90deg, #00cfff, #ff3cac);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+body.light-mode .section-title {
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-green), var(--accent-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none; 
+}
+
+body.light-mode #banner {
+  background: rgba(0, 123, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+}
+
+body.light-mode .butterfly {
+  color: var(--accent-blue);
+}
+
+body.light-mode .about-content p {
+  color: rgba(14, 14, 14, 0.9);
+}
+
+body.light-mode .social-links a {
+  color: var(--accent-blue);
+}
+
+body.light-mode .skill-card {
+  background: var(--bg-alt);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
+}
+
+body.light-mode .skill-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+}
+
+body.light-mode .skill-icon {
+  color: var(--accent-blue);
+}
+
+body.light-mode .skill-name {
+  color: var(--text-color);
+}
+
+body.light-mode .skill-bar {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .project-card {
+  background: var(--bg-alt);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.15);
+}
+
+body.light-mode .project-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 123, 255, 0.3);
+}
+
+body.light-mode .project-card h3 {
+  color: var(--accent-blue);
+}
+
+body.light-mode .project-card p {
+  color: rgba(14, 14, 14, 0.8);
+}
+
+body.light-mode .btn-link {
+  background: var(--accent-blue);
+  color: white;
+}
+
+body.light-mode .flip-card.big .flip-front,
+body.light-mode .flip-card.no-flip.tkd .flip-front {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 123, 255, 0.05));
+  color: var(--text-color);
+  border: 1px solid var(--accent-blue);
+}
+
+body.light-mode .flip-card.big .flip-front:hover,
+body.light-mode .flip-card.no-flip.tkd .flip-front:hover {
+  box-shadow: 0 0 20px var(--accent-pink);
+  border-color: var(--accent-pink);
+}
+
+body.light-mode #tkdImagesModal {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(0, 123, 255, 0.95));
+  box-shadow: 0 0 40px rgba(0, 123, 255, 0.5);
+}
+
+body.light-mode #tkdImagesModal .close-button {
+  color: var(--accent-pink);
+}
+
+body.light-mode #contact p {
+  color: var(--text-color);
+}
+
+body.light-mode .footer {
+  color: rgba(14, 14, 14, 0.7);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .bubble {
+  background: var(--accent-blue);
+}
+/* ===========================
+   MODE TOGGLE (Light/Dark Mode)
+=========================== */
+#modeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-alt);
+  color: var(--text-color);
+  border: 1px solid var(--accent-blue);
+  border-radius: 8px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  overflow: hidden; 
+}
+
+.sun-icon, .moon-icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1.1rem; 
+  line-height: 1; 
+}
+
+.moon-icon {
+  opacity: 0; 
+  transition: opacity 0.3s;
+}
+
+.sun-icon {
+  opacity: 1; 
+  transition: opacity 0.3s;
+}
+
+/* Style cho nút trong Light Mode */
+body.light-mode #modeToggle {
+  color: var(--bg-color); 
+  background: var(--text-color); 
+  border-color: var(--accent-pink); 
+  box-shadow: 0 0 15px var(--accent-pink); 
+}
+
+/* Ẩn mặt trời và hiện mặt trăng khi ở Light Mode */
+body.light-mode .sun-icon {
+  opacity: 0; 
+}
+body.light-mode .moon-icon {
+  opacity: 1; 
+}
+/* ===========================
+   HIỆU ỨNG LẤP LÁNH TRÊN NỀN INTRO
+=========================== */
+.sparkles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Đảm bảo không cản trở tương tác chuột */
+  z-index: 0; /* Đặt dưới nội dung chính */
+}
+
+.sparkle {
+  position: absolute;
+  background: white; /* Màu trắng cho các đốm sáng */
+  border-radius: 50%; /* Hình tròn */
+  animation: twinkle 2s infinite alternate; /* Hiệu ứng nhấp nháy */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(135, 206, 250, 0.5); /* Hiệu ứng tỏa sáng nhẹ */
+  opacity: 0; /* Ban đầu ẩn */
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1; /* Sáng rõ nhất */
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+/* ===========================
+   SECTION TITLE
+=========================== */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 40px 0 20px;
+  /* Gradient cho tiêu đề */
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-green), var(--accent-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-blue);
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--accent-blue);
+  margin: 10px auto 0;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+.btn-explore {
+  background: var(--accent-pink);
+  color: var(--bg-color);
+  padding: 14px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 15px var(--accent-pink);
+  transition: all 0.3s ease;
+}
+
+.btn-explore:hover {
+  background: var(--accent-green);
+  box-shadow: 0 0 25px var(--accent-green);
+  transform: scale(1.1);
+}
+
+/* ===========================
+   INTRO + BANNER
+=========================== */
+#intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+  background-color: var(--bg-color); /* nền đen */
+  position: relative;
+  overflow: hidden; /* Ẩn các ngôi sao hay hiệu ứng tràn ra ngoài */
+}
+
+.intro-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-align: center;
+  line-height: 2;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-green), var(--accent-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(0, 207, 255, 0.5);
+  animation: glowIntro 3s infinite alternate;
+}
+
+@keyframes glowIntro {
+  from {
+    text-shadow: 0 0 10px var(--accent-blue), 0 0 20px var(--accent-green);
+  }
+
+  to {
+    text-shadow: 0 0 20px var(--accent-pink), 0 0 30px var(--accent-blue);
+  }
+}
+
+#banner {
+  background: rgba(0, 207, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 40px 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Đảm bảo các phần tử xếp dọc */
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  margin: 20px;
+  position: relative; /* Để bướm bay trong banner */
+  overflow: hidden; /* Đảm bảo bướm không tràn ra ngoài */
+}
+
+.glow-text {
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px var(--accent-blue), 0 0 20px var(--accent-pink);
+}
+
+.glow-text::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent-pink);
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--accent-pink);
+  margin: 8px auto 0;
+}
+
+#banner-typewriter::after {
+  content: '|';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Hiệu ứng bướm */
+.butterflies {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.butterfly {
+  position: absolute;
+  color: var(--accent-pink); /* Màu bướm */
+  animation: fly 10s linear infinite;
+  transform: translateY(0);
+  opacity: 0;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); 
+}
+@keyframes fly {
+  0% {
+    transform: translateY(60vh) translateX(0vw) rotate(0deg); /* Bắt đầu từ dưới banner, không lệch ngang */
+    opacity: 0; /* Hoàn toàn trong suốt */
+  }
+  20% {
+    transform: translateY(40vh) translateX(2vw) rotate(5deg); /* Bay lên và hơi lệch sang phải nhẹ nhàng */
+    opacity: 0.5; /* Mờ dần hiện ra */
+  }
+  40% {
+    transform: translateY(20vh) translateX(-2vw) rotate(-5deg); /* Bay lên và hơi lệch sang trái nhẹ nhàng */
+    opacity: 0.8;
+  }
+  60% {
+    transform: translateY(0vh) translateX(3vw) rotate(5deg); /* Bay lên và hơi lệch sang phải, hiện rõ nhất */
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-20vh) translateX(-3vw) rotate(-5deg); /* Tiếp tục bay lên và hơi lệch sang trái */
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-70vh) translateX(0vw) rotate(0deg); /* Bay hoàn toàn ra khỏi màn hình phía trên, không lệch ngang */
+    opacity: 0; /* Biến mất */
+  }
+}
+
+
+/* ===========================
+   PERSONAL INFO SECTION
+=========================== */
+#about {
+  padding: 20px;
+}
+
+.intro-content {
+  max-width: 800px; 
+  margin: 20px auto 40px auto; /* Tăng khoảng cách dưới */
+}
+
+.about-me-grid { 
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Ảnh chiếm 1 phần, thông tin chiếm 2 phần */
+  gap: 30px; /* Tăng khoảng cách giữa ảnh và thông tin */
+  max-width: 1000px;
+  margin: 20px auto;
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+
+.info-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--accent-green);
+  border-radius: 12px;
+  padding: 15px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.info-card:hover {
+  box-shadow: 0 0 15px var(--accent-green);
+  transform: translateY(-3px);
+}
+
+.info-table .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.info-table .row p {
+  flex: 1;
+  padding-right: 10px;
+}
+
+/* ===========================
+   PERSONAL INFO SECTION - AVATAR 
+=========================== */
+.avatar {
+  text-align: center;
+  position: relative;
+  width: 250px; 
+  height: 250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Khung tròn tổng thể */
+  overflow: hidden; 
+  background: transparent; /* Nền trong suốt */
+}
+
+.avatar img {
+  width: 220px; /* Kích thước ảnh, lớn hơn để chiếm diện tích */
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%; 
+  position: relative;
+  z-index: 2; /* nằm trên mọi hiệu ứng */
+  filter: drop-shadow(0 0 15px var(--accent-blue)) /* Glow xanh chính */
+          drop-shadow(0 0 30px var(--accent-pink)); /* Glow hồng phụ */
+  transition: all 0.4s ease-in-out;
+}
+
+/* Lớp Aura 1 */
+.avatar::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%; /* Bằng kích thước khung avatar */
+  height: 100%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.8); /* Bắt đầu nhỏ hơn, ở giữa */
+  background: radial-gradient(circle, rgba(0, 207, 255, 0.5) 0%, transparent 70%); /* Lan tỏa màu xanh */
+  box-shadow: 0 0 50px var(--accent-blue), /* Glow mạnh cho aura xanh */
+              0 0 80px rgba(255, 60, 172, 0.4); /* Glow nhẹ màu hồng */
+  animation: auraPulse 5s infinite alternate ease-in-out; /* Animation thở */
+  z-index: 1; /* Nằm dưới ảnh, trên lớp aura 2 */
+  opacity: 0.9;
+}
+
+/* Lớp Aura 2*/
+.avatar::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%; /* Lớn hơn khung avatar */
+  height: 120%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.7); /* Bắt đầu nhỏ hơn, ở giữa */
+  background: radial-gradient(circle, rgba(0, 255, 148, 0.3) 0%, transparent 80%); /* Lan tỏa màu xanh lá */
+  box-shadow: 0 0 70px var(--accent-green), /* Glow mạnh xanh lá */
+              0 0 100px rgba(0, 207, 255, 0.3); /* Glow nhẹ xanh dương */
+  animation: auraPulse 7s infinite alternate-reverse ease-in-out; /* Animation thở ngược chiều, chậm hơn */
+  z-index: 0; /* Nằm dưới cùng */
+  opacity: 0.7;
+}
+
+/* Hiệu ứng khi hover */
+.avatar:hover img {
+  transform: scale(1.08); /* Ảnh phóng to nhẹ */
+  filter: drop-shadow(0 0 20px var(--accent-green)) 
+          drop-shadow(0 0 40px var(--accent-blue)); 
+}
+
+/* Tăng cường aura khi hover */
+.avatar:hover::before {
+  box-shadow: 0 0 60px var(--accent-green), 0 0 100px var(--accent-pink);
+  transform: translate(-50%, -50%) scale(1.0); /* Mở rộng aura gần ảnh */
+  opacity: 1;
+}
+
+.avatar:hover::after {
+  box-shadow: 0 0 80px var(--accent-pink), 0 0 120px var(--accent-blue);
+  transform: translate(-50%, -50%) scale(0.9); /* Mở rộng aura xa hơn */
+  opacity: 0.9;
+}
+
+/* Animation  cho aura */
+@keyframes auraPulse {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.9; }
+  50% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.9; }
+}
+
+/* Responsive  */
+@media(max-width: 768px) {
+  .about-me-grid {
+    grid-template-columns: 1fr;
+  }
+  .avatar {
+    order: -1;
+    margin-bottom: 20px;
+  }
+}
+
+/* ===========================
+   GOALS SECTION
+=========================== */
+#goals {
+  padding: 20px;
+  text-align: center;
+}
+
+.pill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.pill-list li {
+  background: rgba(0, 207, 255, 0.1);
+  border: 1px solid var(--accent-blue);
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  box-shadow: 0 0 10px rgba(0, 207, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.pill-list li:hover {
+  background: var(--accent-blue);
+  color: var(--bg-color);
+  box-shadow: 0 0 20px var(--accent-blue);
+  transform: translateY(-3px);
+}
+
+/* ===========================
+   HOBBIES SECTION (Flip Cards)
+=========================== */
+#hobbies {
+  padding: 20px;
+}
+
+.card-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flip-card {
+  background: transparent;
+  perspective: 1000px;
+  height: 150px; /* Chiều cao cố định cho card */
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.flip-front {
+  background: linear-gradient(135deg, rgba(159, 166, 168, 0.1), rgba(24, 144, 184, 0.1)); /* Hiệu ứng glassmorphism nhẹ */
+  border: 1px solid var(--accent-blue);
+}
+
+.flip-front:hover {
+  box-shadow: 0 0 20px var(--accent-pink);
+  border-color: var(--accent-pink);
+}
+
+.flip-back {
+  background: var(--accent-green); /* Mặc định là xanh lá */
+  color: var(--bg-color);
+  transform: rotateY(180deg);
+  flex-direction: column; /* icon và chữ xếp dọc */
+}
+
+.flip-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.flip-back .fab,
+.flip-back .fas {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.flip-back.movies {
+  background: var(--accent-blue); /* Màu xanh cho thẻ phim */
+  color: var(--bg-color);
+  cursor: pointer;
+}
+
+.flip-back.novels {
+  background: var(--accent-pink); /* Màu hồng cho thẻ sách */
+  color: var(--bg-color);
+  cursor: pointer;
+}
+
+
+.flip-card.no-flip .flip-inner {
+  transform: rotateY(0deg) !important;
+}
+
+.flip-card.no-flip .flip-front {
+  background: linear-gradient(135deg, rgba(159, 166, 168, 0.1), rgba(24, 144, 184, 0.1));
+  border: 1px solid var(--accent-blue);
+}
+.flip-card.no-flip .flip-front:hover {
+  box-shadow: 0 0 20px var(--accent-pink);
+  border-color: var(--accent-pink);
+}
+
+
+.flip-back.music,
+.flip-back.chess {
+  cursor: pointer;
+}
+
+.flip-back.music p,
+.flip-back.chess p,
+.flip-back.movies p, /* Áp dụng cho cả thẻ phim và sách */
+.flip-back.novels p {
+  transition: text-decoration 0.3s ease; 
+}
+
+
+
+/* ===========================
+   SKILLS & LANGUAGES SECTION
+=========================== */
+#skills {
+  padding: 20px;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.glass-box {
+  background: rgba(255, 255, 255, 0.05); /* Hiệu ứng glassmorphism nhẹ */
+  border: 1px solid var(--accent-green);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 255, 148, 0.3);
+}
+
+.glass-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--accent-green);
+  text-shadow: 0 0 8px rgba(0, 255, 148, 0.5);
+}
+
+.bar {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  height: 24px;
+}
+
+.bar span {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  height: 100%;
+  /* Gradient cho thanh tiến độ */
+  background: linear-gradient(90deg, #0c3573, #8dc4d6);
+  box-shadow: 0 0 10px var(--accent-blue);
+  border-radius: 8px;
+  font-size: 1rem;
+  white-space: nowrap;
+  color: #f8f8f2;
+  transition: width 1s ease-out; /* Animation cho thanh tiến độ */
+}
+
+/* ===========================
+   CERTIFICATES SECTION
+=========================== */
+#certificate {
+  padding: 20px;
+  text-align: center;
+}
+
+.certificates-cards-wrapper {
+  display: flex; /* xếp các thẻ ngang hàng */
+  flex-wrap: wrap; /* Cho phép xuống hàng trên màn hình nhỏ */
+  justify-content: center; /* Căn giữa các thẻ theo chiều ngang */
+  align-items: flex-start; /* Căn chỉnh các thẻ từ trên xuống */
+  max-width: 900px; /* Giới hạn chiều rộng, không sát mép */
+  margin: 20px auto; /* Căn giữa và tạo khoảng cách trên dưới */
+  gap: 20px; /* Khoảng cách giữa hai thẻ */
+}
+
+/* (Thẻ 1) */
+.flip-card.big {
+  width: calc(50% - 10px); /* Mỗi thẻ chiếm khoảng 50% trừ đi một nửa khoảng cách */
+  max-width: 450px; 
+  height: 300px; /* Chiều cao cố định */
+  margin: 0; 
+}
+
+.flip-card.big .flip-back{
+  padding: 0;       
+  display: block;     
+}
+
+.flip-card.big .flip-back img {
+  width: 100%;        /* fit ngang sát card */
+  height: 100%;       /* fit dọc sát card */
+  object-fit: cover;  
+  border-radius: 12px;
+}
+
+/* (Thẻ 2) */
+.flip-card.no-flip.tkd {
+  width: calc(50% - 10px); 
+  max-width: 450px;
+  height: 300px; 
+  margin: 0; 
+}
+
+.flip-card.no-flip.tkd .flip-front { 
+  background: linear-gradient(135deg, rgba(159, 166, 168, 0.1), rgba(24, 144, 184, 0.1)); /* Giữ màu nền giống flip-front */
+  border: 1px solid var(--accent-blue);
+  cursor: pointer; /* Con trỏ ngón tay */
+  transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.flip-card.no-flip.tkd .flip-front:hover {
+  box-shadow: 0 0 20px var(--accent-pink); 
+  border-color: var(--accent-pink);
+  transform: translateY(-3px); 
+}
+
+
+/* ===========================
+   MODAL HIỂN THỊ HÌNH ẢNH TAEKWONDO 
+=========================== */
+#tkdImagesModal {
+  display: none; /* Ẩn mặc định */
+  position: fixed; /* Hiển thị trên tất cả nội dung */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Căn giữa màn hình */
+  background: linear-gradient(135deg, rgba(159, 166, 168, 0.95), rgba(24, 144, 184, 0.95)); 
+  border: 1px solid var(--accent-blue);
+  border-radius: 12px;
+  padding: 30px; 
+  z-index: 1000; 
+  box-shadow: 0 0 40px var(--accent-blue); 
+  max-width: 90%; /* Giới hạn chiều rộng */
+  max-height: 90vh; /* Giới hạn chiều cao */
+  overflow-y: auto; /* Cho phép cuộn nếu nhiều hình */
+}
+
+#tkdImagesModal .modal-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Bố cục lưới  */
+  gap: 15px; /* Khoảng cách giữa các hình */
+  padding-top: 10px; /* Khoảng cách từ nút X đến hình ảnh */
+}
+
+#tkdImagesModal img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+  /* Hiệu ứng animation từng hình từng hình nhảy vào */
+  opacity: 0; /* Ẩn ban đầu */
+  transform: translateY(50px) scale(0.7); /* Bắt đầu từ dưới và nhỏ hơn */
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Animation "nhảy" */
+}
+
+#tkdImagesModal img.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+#tkdImagesModal .close-button {
+  position: absolute;
+  top: 15px; /* Dịch xuống một chút */
+  right: 15px; /* Dịch vào một chút */
+  font-size: 1.8rem; /* Nút X lớn hơn */
+  font-weight: bold;
+  color: var(--accent-pink);
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: transform 0.2s, color 0.2s;
+}
+
+#tkdImagesModal .close-button:hover {
+  transform: rotate(90deg); /* Hiệu ứng xoay khi hover */
+  color: var(--accent-green); /* Đổi màu khi hover */
+}
+/* ===========================
+   PROJECTS SECTION
+=========================== */
+#projects {
+  padding: 20px;
+}
+
+.project-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.project-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--accent-blue);
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 15px var(--accent-pink);
+}
+
+.project-card h3 {
+  font-size: 1.4rem;
+  color: var(--accent-blue);
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.project-card strong {
+  color: var(--accent-green);
+}
+
+.link-arrow {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--accent-pink);
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.link-arrow:hover {
+  transform: translateX(5px);
+}
+
+/* ===========================
+   CONTACT SECTION
+=========================== */
+#contact {
+  padding: 40px 20px;
+  text-align: center;
+  background: var(--bg-alt); /* Nền hơi khác biệt để tách biệt */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icons {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  border: 2px solid var(--accent-blue);
+  border-radius: 50%;
+  color: var(--accent-blue);
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: var(--accent-pink);
+  color: var(--bg-color);
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 15px var(--accent-pink);
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* ===========================
+   TOP BUTTON
+=========================== */
+#topBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--accent-pink);
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px; 
+  font-size: 1.5rem;
+  color: #fff;
+  box-shadow: 0 0 10px var(--accent-pink);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+
+#topBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#topBtn:hover {
+  transform: scale(1.2);
+}
+
+/* ===========================
+   BUBBLE + SPARKLE EFFECTS
+=========================== */
+.bubbles, .sparkles {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  z-index: -1; 
+}
+
+.bubble,
+.sparkle {
+  position: absolute;
+  bottom: -50px; /* Bắt đầu từ dưới màn hình */
+  border-radius: 50%;
+  animation: floatUp 10s linear infinite;
+}
+
+.bubble {
+  background: var(--accent-blue);
+  width: 10px;
+  height: 10px;
+  opacity: 0.8;
+}
+
+.sparkle {
+  background: var(--accent-green);
+  width: 6px;
+  height: 6px;
+  box-shadow: 0 0 10px var(--accent-green);
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0; /* Biến mất dần khi lên cao */
+  }
+}
+
+/* ===========
+   FOOTER 
+============== */
+.footer {
+  text-align: center;
+  padding: 20px 6px 20px 6px;
+  font-size: 1rem;
+  color: rgba(248, 248, 248, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: var(--bg-alt); 
+}
+
+.footer-nav {
+  margin-bottom: 25px;
+  padding: 5px;
+}
+
+.footer-nav ul {
+  list-style: none; 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 25px; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.footer-nav a {
+  color: var(--text-color); /* Màu chữ các liên kết */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  display: inline-block; 
+}
+
+.footer-nav a:hover {
+  color: var(--accent-blue); /* Màu xanh */
+  background-color: rgba(0, 207, 255, 0.1); /* Nền hơi xanh */
+  transform: translateY(-2px); /* Hiệu ứng nhấc nhẹ lên */
+}
+
+.footer p {
+  font-size: 0.8rem; 
+  line-height: 1.5; 
+  opacity: 0.8; 
+  margin-top: 0; 
+}
+
+
+/* ===========================
+   RESPONSIVE (FOOTER)
+=========================== */
+@media (max-width: 768px) {
+  .footer-nav ul {
+    gap: 15px; /* Giảm khoảng cách trên màn hình nhỏ */
+  }
+
+  .footer-nav a {
+    font-size: 0.9rem; /* Giảm kích thước chữ */
+  }
+
+  .footer {
+    padding: 30px 15px 15px; /* Điều chỉnh padding cho màn hình nhỏ */
+  }
+}
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media(max-width: 768px) {
+  .intro-title {
+    font-size: 2.8rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .card-wrap,
+  .skill-grid,
+  .project-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr; 
+  }
+
+  .avatar {
+    order: -1; 
+  }
+}
+
+@media(max-width: 480px) {
+  .intro-title {
+    font-size: 2rem;
+  }
+
+  .btn-explore {
+    font-size: 1.1rem;
+    padding: 12px 30px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .card-wrap,
+  .skill-grid,
+  .project-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .pill-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-icons a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+}
+=======
 /* ===========================
    ROOT VARIABLES
 =========================== */
@@ -1162,3 +2399,4 @@ body.light-mode .moon-icon {
     font-size: 1.5rem;
   }
 }
+>>>>>>> ed562001bb3e61d03330df22b88f01785e707ecc

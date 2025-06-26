@@ -97,19 +97,24 @@
       <h2 class="section-title">HOBBIES</h2>
 
       <div class="card-wrap">
-        <!-- Film -->
-        <div class="flip-card no-flip">
+        <div class="flip-card" onclick="window.open('https://www.rophim.me/', '_blank')">
           <div class="flip-inner">
             <div class="flip-front">🎬 MOVIES</div>
+            <div class="flip-back movies">
+              <i class="fas fa-film fa-3x"></i>
+              <p>Explore the world of movies!</p>
+            </div>
           </div>
         </div>
-        <!-- Novel -->
-        <div class="flip-card no-flip">
+        <div class="flip-card" onclick="window.open('https://truyenhdt.com/mobile//', '_blank')">
           <div class="flip-inner">
             <div class="flip-front">📚 NOVELS</div>
+            <div class="flip-back novels">
+              <i class="fas fa-book fa-3x"></i>
+              <p>Explore the world of fiction!</p>
+            </div>
           </div>
         </div>
-        <!-- MUSIC -->
         <div class="flip-card music" onclick="window.open('https://open.spotify.com/playlist/51dLoNriSZJPXaVJKtbNCs?si=7b5dbd7cb1674d58&pt=f0624899051502713ca46839e573a6a0', '_blank')">
           <div class="flip-inner">
             <div class="flip-front">🎵 MUSIC</div>
@@ -120,7 +125,6 @@
           </div>
         </div>
 
-        <!-- CHESS -->
         <div class="flip-card chess" onclick="window.open('https://www.chess.com/vi', '_blank')">
           <div class="flip-inner">
             <div class="flip-front">♟️ CHESS</div>
@@ -129,8 +133,8 @@
               <i class="fas fa-chess fa-3x"></i>
             </div>
           </div>
-        </div>   
-      </div> 
+        </div>
+      </div>
     </section>
 
     <!-- 🛠️ SKILLS & LANGUAGES -->
@@ -164,7 +168,7 @@
         <div class="flip-inner">
           <div class="flip-front">TAEKWONDO</div>
           <div class="flip-back">
-            <img src="images/certificate.jpg"  />
+            <img src="images/certificate.jpg" />
           </div>
         </div>
       </div>
@@ -236,13 +240,21 @@
 
     <!-- 🪄 FOOTER -->
     <footer class="footer">
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="#intro">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skills">Skills & Languages</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
       <p>
         ✨ Made with 💖 by Nynn ✨<br>
-       🪄 © 2025 Nguyen Ngoc Nhu Y. Thanks for visiting!
-        
+        🪄 © 2025 Nguyen Ngoc Nhu Y. Thanks for visiting!
       </p>
     </footer>
-  </main>
 
 <script src="script.js"></script>
 </body>
