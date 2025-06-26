@@ -234,8 +234,8 @@
             }
             
             .skills-container {
-                flex-direction: column;
-
+                flex-direction: column;}
+            }
         /* Animation classes */
         .fade-in {
             opacity: 0;
@@ -318,11 +318,50 @@
     background-color: #4CAF50;
     color: #121212;
 }
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #4CAF50; /* xanh lá */
+    color: white;
+    padding: 10px 0;
+    z-index: 1000;
+    text-align: left;
+}
+
+.navbar span {
+    margin-left: 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #1B5E20; /* xanh lá đậm */
+}
+
+
 
     </style>
+    
 </head>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <body>
+<div class="header_nav navbar">
+    <span><a href="#profile">PROFILE</a></span>
+    <span><a href="#info">INFOMATION</a></span>
+    <span><a href="#career">CAREER</a></span>
+    <span><a href="#inter">INTEREST</a></span>
+    <span><a href="#skill">SKILL</a></span>
+    <span><a href="#proj">PROJECT</a></span>
+    <span><a href="#certi">CERTIFICATE</a></span>
+    <span><a href="#contact">CONTACT</a></span>
+</div>
     <div class="hero">
         <h1 class="fade-in">WELCOME TO MY</h1>
         <h2 class="fade-in">PROFILE</h2>
@@ -336,14 +375,14 @@
         <h4 class="fade-in">EXPLORE MY WORLD</h4>
     </div>
     <div class="content">
-        <div class="section fade-in">
+        <div class="section fade-in" id="profile">
             <h2>Profile</h2>
             <p>I'm an IT student at UTH with a strong foundation in programming, fluent in English, and skilled in leadership and creativity. I’m eager to solve real-world problems and thrive in dynamic environments.</p>
         </div>
         
         <hr>
         
-       <div class="section fade-in" style="display: flex;">
+       <div class="section fade-in" style="display: flex;" id = "info">
     <div style="flex: 1;">
         <h2>Information</h2>
         <ul class="info-list">
@@ -362,7 +401,7 @@
 </div>
 <hr>
         
-        <div class="section fade-in">
+        <div class="section fade-in" id="career">
             <h2>Career Goals</h2>
             <ul class="checkbox-list">
                 <li data-checked="false"> To apply my programming knowledge and soft skills in real-world projects or internships, gain hands-on experience, and adapt to a professional IT working environment.</li>
@@ -372,7 +411,7 @@
         
         <hr>
         
-        <div class="section fade-in">
+        <div class="section fade-in" id="inter">
             <h2>Interest</h2>
             <ul class="skills-list">
                 <li>Communicate</li>
@@ -385,7 +424,7 @@
         
         <hr>
         
-         <div class="section fade-in">
+         <div class="section fade-in"  id="skill">
             <h2>Skills & Languages</h2>
             <div class="skills-languages-container">
                 <div class="skills-section">
@@ -398,7 +437,7 @@
                         <li>Python</li>
                     </ul>
                 </div>
-                
+                    
                 <div class="languages-section">
                     <h3 class="section-title">Languages</h3>
                     <ul class="skills-list">
@@ -407,11 +446,31 @@
                     </ul>
                 </div>
             </div>
-        </div>
+       <div class="certificate-section" id="certi">
+  <h2 class="title">Certificate</h2>
+  <hr />
+  <div class="certificate-list">
+    <div class="certificate-item">
+    </div>
+  </div>
+</div>
+<div class="project-section" id=" proj">
+  <h2 class="title">Projects</h2>
+  <hr />
+  <div class="project-list">
+    
+    <div class="project-item">
+      <h3>Skincare Booking App</h3>
+      <p>Ứng dụng web đặt lịch chăm sóc da, giúp khách hàng chọn dịch vụ và đặt lịch nhanh chóng, đồng thời hỗ trợ spa quản lý lịch hẹn.</p>
+      <p><strong>Chức năng:</strong> Đăng ký, đăng nhập, đặt lịch, gửi email xác nhận, quản lý lịch hẹn.</p>
+      <p><strong>Công nghệ:</strong> Django, MySQL, HTML, CSS, JavaScript.</p>
+      <a href="https://github.com/Justhathanh/Project_Java_SkinCareBooking" class="github-link" target="_blank">🔗 View on GitHub</a>
+    </div>
+  </div>
+</div>
+
         
-        <hr>
-        
-        <div class="section fade-in">
+        <div class="section fade-in" id="contact">
             <h2>Contact</h2>
             <div class="contact-section">
                 <div class="contact-info">
